@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Soporte tecnico para computadoras e impresoras en Jhakorn.">
+    <title>Jhakorn - Soporte tecnico</title>
+</head>
+<body>
+    <header id="inicio">
+        <h1>Jhakorn</h1>
+        <p>Soporte tecnico para computadoras e impresoras</p>
+
+        <nav aria-label="Navegacion principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="titulo-presentacion">
+            <h2 id="titulo-presentacion">Soluciones tecnicas para tu equipo</h2>
+            <p>
+                Ayudamos a diagnosticar, mantener y configurar tus dispositivos.
+            </p>
+
+            <img
+                src="imagen-jhakorn.svg"
+                alt="Computadora que representa los servicios tecnicos de Jhakorn"
+                width="800"
+                height="450"
+            >
+        </section>
+
+        <section id="servicios">
+            <h2>Servicios</h2>
+
+            <article>
+                <h3>Computadoras</h3>
+                <ul>
+                    <li>Diagnostico de fallas</li>
+                    <li>Mantenimiento preventivo</li>
+                    <li>Instalacion de programas</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Impresoras</h3>
+                <ul>
+                    <li>Limpieza y mantenimiento</li>
+                    <li>Configuracion de impresion</li>
+                    <li>Diagnostico de problemas</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="proceso">
+            <h2>Proceso de atencion</h2>
+            <ol>
+                <li>Recibimos tu consulta</li>
+                <li>Revisamos el problema</li>
+                <li>Explicamos la solucion propuesta</li>
+                <li>Realizamos el trabajo autorizado</li>
+            </ol>
+
+            <table>
+                <caption>Modalidades disponibles</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Modalidad</th>
+                        <th scope="col">Uso recomendado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Presencial</td>
+                        <td>Mantenimiento fisico del equipo</td>
+                    </tr>
+                    <tr>
+                        <td>Remota</td>
+                        <td>Configuracion y soporte de programas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <aside>
+            <h2>Consejo importante</h2>
+            <p>
+                Realiza una copia de seguridad antes de modificar tu sistema.
+            </p>
+        </aside>
+
+        <section id="contacto">
+            <h2>Solicita informacion</h2>
+
+            <form action="" method="get">
+                <p>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" required>
+                </p>
+
+                <p>
+                    <label for="correo">Correo:</label><br>
+                    <input type="email" id="correo" name="correo" required>
+                </p>
+
+                <p>
+                    <label for="tipo-servicio">Servicio:</label><br>
+                    <select id="tipo-servicio" name="servicio" required>
+                        <option value="">Selecciona una opcion</option>
+                        <option value="computadora">Computadora</option>
+                        <option value="impresora">Impresora</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="mensaje">Mensaje:</label><br>
+                    <textarea id="mensaje" name="mensaje" rows="5" cols="40" required></textarea>
+                </p>
+
+                <button type="submit">Enviar solicitud de practica</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Servicio tecnico</p>
+        <p><a href="#inicio">Volver al inicio</a></p>
+        <p><a href="clase-07.html">Volver a la Clase 07</a></p>
+    </footer>
+</body>
+</html>

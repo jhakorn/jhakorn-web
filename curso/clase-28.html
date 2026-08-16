@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 28 - Modo oscuro</title>
+    <link rel="stylesheet" href="clase-28.css">
+    <script src="clase-28.js" defer></script>
+</head>
+<body>
+    <header class="encabezado" id="inicio">
+        <div class="contenedor barra">
+            <a class="marca" href="#inicio">Jhakorn</a>
+
+            <button
+                id="boton-tema"
+                class="boton-tema"
+                type="button"
+                aria-pressed="false"
+            >
+                Activar modo oscuro
+            </button>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="hero">
+            <div>
+                <p class="etiqueta">JavaScript desde cero</p>
+                <h1>Modo claro y modo oscuro</h1>
+                <p>
+                    El mismo contenido utiliza diferentes variables de color.
+                </p>
+            </div>
+
+            <img
+                src="imagen-jhakorn.svg"
+                alt="Computadora que representa los servicios tecnicos de Jhakorn"
+                width="800"
+                height="450"
+            >
+        </section>
+
+        <section>
+            <h2>Servicios</h2>
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <h3>Computadoras</h3>
+                    <p>Diagnostico y mantenimiento preventivo.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Impresoras</h3>
+                    <p>Limpieza y configuracion de impresion.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Programas</h3>
+                    <p>Instalacion de software autorizado.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel-estado">
+            <h2>Estado del tema</h2>
+            <p id="estado-tema" aria-live="polite">Detectando preferencia...</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 28</p>
+        <a href="clase-27.html">Volver a la Clase 27</a>
+    </footer>
+</body>
+</html>

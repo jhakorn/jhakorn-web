@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 11 - Modelo de caja</title>
+    <link rel="stylesheet" href="clase-11.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Modelo de caja CSS</h1>
+        <p>Contenido, relleno, borde y margen</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Partes de una caja</h2>
+
+            <div class="zona-margen">
+                <div class="caja-ejemplo">
+                    <p>Este texto es el contenido.</p>
+                </div>
+            </div>
+
+            <ul class="leyenda">
+                <li><strong>Contenido:</strong> texto o elementos internos.</li>
+                <li><strong>Padding:</strong> espacio entre contenido y borde.</li>
+                <li><strong>Border:</strong> linea alrededor del padding.</li>
+                <li><strong>Margin:</strong> espacio exterior de la caja.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Comparacion de box-sizing</h2>
+
+            <div class="caja-content-box">
+                <p>content-box</p>
+                <p>El padding y el borde se suman al ancho.</p>
+            </div>
+
+            <div class="caja-border-box">
+                <p>border-box</p>
+                <p>El padding y el borde se incluyen en el ancho.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tarjeta de servicio</h2>
+
+            <article class="tarjeta">
+                <h3>Mantenimiento de computadora</h3>
+                <p>Diagnostico, limpieza y revision del sistema.</p>
+                <a class="boton" href="#">Solicitar informacion</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 11</p>
+        <a href="clase-10.html">Volver a la Clase 10</a>
+    </footer>
+</body>
+</html>

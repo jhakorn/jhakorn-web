@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplo adaptable de los servicios tecnicos de Jhakorn.">
+    <title>Clase 16 - Diseno adaptable</title>
+    <link rel="stylesheet" href="clase-16.css">
+</head>
+<body>
+    <header class="encabezado" id="inicio">
+        <div class="barra contenedor">
+            <a class="marca" href="#inicio">Jhakorn</a>
+
+            <nav aria-label="Navegacion principal">
+                <ul class="menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="presentacion contenedor">
+            <div>
+                <p class="etiqueta">Servicio tecnico</p>
+                <h1>Soporte que se adapta a tus necesidades</h1>
+                <p class="descripcion">
+                    Atencion para computadoras, impresoras y configuracion de programas.
+                </p>
+                <a class="boton" href="#contacto">Solicitar informacion</a>
+            </div>
+
+            <img
+                src="imagen-jhakorn.svg"
+                alt="Computadora que representa los servicios tecnicos de Jhakorn"
+                width="800"
+                height="450"
+            >
+        </section>
+
+        <section class="servicios contenedor" id="servicios">
+            <p class="etiqueta">Servicios</p>
+            <h2>Soluciones disponibles</h2>
+
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <h3>Computadoras</h3>
+                    <p>Diagnostico, limpieza y mantenimiento preventivo.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Impresoras</h3>
+                    <p>Revision, limpieza y configuracion de impresion.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Programas</h3>
+                    <p>Instalacion y configuracion de software autorizado.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="contacto contenedor" id="contacto">
+            <div>
+                <p class="etiqueta">Contacto</p>
+                <h2>Necesitas ayuda con tu equipo</h2>
+                <p>Solicita informacion sobre el servicio que necesitas.</p>
+            </div>
+            <a class="boton" href="mailto:contacto@jhakorn.com">Contactar</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 16</p>
+        <a href="clase-15.html">Volver a la Clase 15</a>
+    </footer>
+</body>
+</html>

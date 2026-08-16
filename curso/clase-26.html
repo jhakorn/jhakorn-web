@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 26 - Validacion de formularios</title>
+    <link rel="stylesheet" href="clase-26.css">
+    <script src="clase-26.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor">
+            <p class="etiqueta">JavaScript desde cero</p>
+            <h1>Validacion de formularios</h1>
+            <p>Comprobar datos antes de procesarlos.</p>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="panel">
+            <h2>Solicitud de servicio</h2>
+            <p>Utiliza datos inventados para esta practica local.</p>
+
+            <div id="resumen" class="resumen" aria-live="polite"></div>
+
+            <form id="formulario" novalidate>
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        aria-describedby="error-nombre"
+                    >
+                    <p id="error-nombre" class="error"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        aria-describedby="error-correo"
+                    >
+                    <p id="error-correo" class="error"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="servicio">Servicio</label>
+                    <select
+                        id="servicio"
+                        name="servicio"
+                        aria-describedby="error-servicio"
+                    >
+                        <option value="">Selecciona una opcion</option>
+                        <option value="computadora">Computadora</option>
+                        <option value="impresora">Impresora</option>
+                        <option value="programas">Programas</option>
+                    </select>
+                    <p id="error-servicio" class="error"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Descripcion del problema</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="5"
+                        aria-describedby="ayuda-mensaje error-mensaje"
+                    ></textarea>
+                    <p id="ayuda-mensaje" class="ayuda">Escribe al menos 10 caracteres.</p>
+                    <p id="error-mensaje" class="error"></p>
+                </div>
+
+                <div class="campo campo-casilla">
+                    <input
+                        type="checkbox"
+                        id="acepta"
+                        name="acepta"
+                        aria-describedby="error-acepta"
+                    >
+                    <label for="acepta">Acepto enviar esta demostracion local</label>
+                </div>
+                <p id="error-acepta" class="error"></p>
+
+                <button class="boton" type="submit">Validar solicitud</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 26</p>
+        <a href="clase-25.html">Volver a la Clase 25</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# Archivos del sistema de Windows
+Thumbs.db
+Desktop.ini
+
+# Configuracion local del editor
+.vscode/
+
+# Variables y secretos locales
+.env
+.env.*
+!.env.example
+
+# Registros temporales
+*.log

@@ -1,0 +1,172 @@
+:root {
+    --color-principal: #123b5d;
+    --color-fondo: #f4f7fa;
+    --color-superficie: #ffffff;
+    --color-texto: #243447;
+    --color-borde: #d7e0e8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: min(90%, 1000px);
+    margin-inline: auto;
+}
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.barra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+
+.marca {
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.boton-menu {
+    min-height: 44px;
+    padding: 0.6rem 0.8rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgb(255 255 255 / 60%);
+    border-radius: 0.45rem;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-contenedor {
+    display: none;
+    flex-basis: 100%;
+}
+
+.menu-contenedor.menu-abierto {
+    display: block;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 0.65rem 0.8rem;
+    color: inherit;
+    border-radius: 0.4rem;
+    text-decoration: none;
+}
+
+.menu a:hover,
+.menu a:focus-visible,
+.boton-menu:hover,
+.boton-menu:focus-visible {
+    background-color: rgb(255 255 255 / 15%);
+}
+
+.menu a:focus-visible,
+.boton-menu:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+.hero {
+    min-height: 55vh;
+    padding-block: 4rem;
+}
+
+.hero h1 {
+    margin-top: 0;
+    color: var(--color-principal);
+    font-size: clamp(2rem, 8vw, 3.5rem);
+}
+
+.etiqueta {
+    color: #087ea4;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.seccion {
+    padding-block: 4rem;
+}
+
+.seccion h2 {
+    color: var(--color-principal);
+}
+
+.seccion-clara {
+    background-color: var(--color-superficie);
+}
+
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.tarjeta {
+    padding: 1.5rem;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.75rem;
+}
+
+footer {
+    padding: 1.5rem;
+    background-color: var(--color-principal);
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: #bdefff;
+}
+
+@media (min-width: 700px) {
+    .boton-menu {
+        display: none;
+    }
+
+    .menu-contenedor,
+    .menu-contenedor.menu-abierto {
+        display: block;
+        flex-basis: auto;
+    }
+
+    .menu {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,619 @@
+﻿<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Curso de HTML desde cero · Clases 1 a 8</title>
+<style>
+@page { size:A4; margin:15mm 14mm 16mm; }
+* { box-sizing:border-box; }
+body { margin:0; color:#172033; font-family:Arial,Helvetica,sans-serif; line-height:1.46; font-size:10.5pt; }
+.portada { min-height:255mm; display:flex; flex-direction:column; justify-content:center; padding:18mm; background:linear-gradient(145deg,#071a33,#0b4d63); color:white; page-break-after:always; }
+.portada .tag { color:#66e3c4; letter-spacing:.18em; font-weight:700; font-size:10pt; }
+.portada h1 { font-size:34pt; line-height:1.08; margin:12mm 0 5mm; }
+.portada p { font-size:15pt; max-width:145mm; color:#d8edf1; }
+.portada .meta { margin-top:24mm; font-size:10pt; color:#9bc4ce; }
+.indice { page-break-after:always; padding:7mm 5mm; }
+.indice h1 { color:#0b4d63; font-size:25pt; }
+.indice ol { font-size:13pt; line-height:2; }
+.intro { background:#edf8f6; border-left:4px solid #16a085; padding:4mm 5mm; }
+.clase { page-break-before:always; }
+.kicker { color:#0b7a75; letter-spacing:.12em; font-size:8.5pt; font-weight:700; border-bottom:1px solid #bddad8; padding-bottom:2mm; }
+h1 { color:#082b46; font-size:23pt; margin:5mm 0 3mm; line-height:1.15; }
+h2 { color:#0b5961; font-size:14pt; margin:6mm 0 2mm; break-after:avoid; }
+.objetivo { font-size:11.5pt; background:#edf8f6; padding:3mm 4mm; border-radius:2mm; }
+li { margin:1.4mm 0; }
+pre { background:#101827; color:#e8eef8; padding:4mm; border-radius:2mm; overflow-wrap:anywhere; white-space:pre-wrap; word-break:break-word; font:7.4pt/1.38 Consolas,'Courier New',monospace; break-inside:auto; }
+code { font-family:Consolas,'Courier New',monospace; }
+.practica { background:#fff7dc; border:1px solid #ead381; padding:3mm 4mm; margin-top:4mm; break-inside:avoid; }
+.cierre { page-break-before:always; padding:25mm 10mm; }
+.cierre h1 { font-size:28pt; }
+.ruta { display:flex; gap:3mm; flex-wrap:wrap; margin:8mm 0; }
+.ruta span { background:#0b5961; color:white; padding:3mm; border-radius:2mm; }
+</style></head><body>
+<section class="portada"><div class="tag">JHAKORN · MATERIAL DE CLASE</div><h1>Curso de HTML<br>desde cero</h1><p>Manual completo de las clases 1 a 8, con explicaciones, buenas practicas y todo el codigo desarrollado.</p><div class="meta">Proyecto: Pagina Web · Generado el 16/08/2026</div></section>
+<section class="indice"><h1>Contenido</h1><div class="intro"><strong>Como usar este manual.</strong> Lee cada clase en orden, escribe el codigo por tu cuenta y luego comparalo con el ejemplo completo. HTML define la estructura; las clases posteriores del proyecto podran anadir CSS para la presentacion.</div><ol><li>Clase 1: Fundamentos y estructura minima</li><li>Clase 2: Textos, jerarquia y comentarios</li><li>Clase 3: Enlaces y botones</li><li>Clase 4: Imagenes accesibles</li><li>Clase 5: Listas y tablas</li><li>Clase 6: Formularios</li><li>Clase 7: HTML semantico y accesibilidad</li><li>Clase 8: Proyecto integrador: pagina completa</li></ol><h2>Progresion</h2><p>Estructura basica → contenido y texto → enlaces → imagenes → listas y tablas → formularios → semantica → proyecto integrador.</p></section>
+<section class="clase">
+  <div class="kicker">CLASE 1 · HTML DESDE CERO</div>
+  <h1>Fundamentos y estructura minima</h1>
+  <p class="objetivo"><strong>Objetivo:</strong> Comprender que es HTML y construir el esqueleto basico de una pagina.</p>
+  <h2>Contenido de la clase</h2>
+  <ul><li>Declaraci&#243;n &lt;!DOCTYPE html&gt; y documento HTML5</li><li>Elemento ra&#237;z &lt;html&gt; y atributo lang</li><li>Metadatos dentro de &lt;head&gt;</li><li>Contenido visible dentro de &lt;body&gt;</li><li>T&#237;tulos con &lt;h1&gt; y p&#225;rrafos con &lt;p&gt;</li></ul>
+  <h2>Explicacion y buenas practicas</h2>
+  <ul><li>HTML describe la estructura y el significado del contenido; no es un lenguaje de programaci&#243;n.</li><li>&lt;!DOCTYPE html&gt; informa al navegador que se usa HTML5.</li><li>lang=&quot;es&quot; ayuda a lectores de pantalla, buscadores y traductores.</li><li>UTF-8 permite representar correctamente acentos, e&#241;es y otros caracteres.</li><li>viewport adapta el ancho de la p&#225;gina a celulares.</li><li>Debe existir un t&#237;tulo de pesta&#241;a claro mediante &lt;title&gt;.</li></ul>
+  <h2>Codigo completo</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Jhakorn - Clase 01&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bienvenido a Jhakorn&lt;/h1&gt;
+    &lt;p&gt;Servicio tecnico de computadoras e impresoras.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <div class="practica"><strong>Practica sugerida:</strong> abre <code>clase-01.html</code> en el navegador, modifica textos y valores, guarda el archivo y recarga la pagina. Revisa que la estructura y la accesibilidad se conserven.</div>
+</section>
+<section class="clase">
+  <div class="kicker">CLASE 2 · HTML DESDE CERO</div>
+  <h1>Textos, jerarquia y comentarios</h1>
+  <p class="objetivo"><strong>Objetivo:</strong> Organizar contenido escrito con titulos, parrafos, enfasis y saltos de linea.</p>
+  <h2>Contenido de la clase</h2>
+  <ul><li>Jerarqu&#237;a de encabezados &lt;h1&gt;, &lt;h2&gt; y &lt;h3&gt;</li><li>Comentarios HTML &lt;!-- ... --&gt;</li><li>&#201;nfasis sem&#225;ntico con &lt;strong&gt; y &lt;em&gt;</li><li>Salto de l&#237;nea con &lt;br&gt;</li></ul>
+  <h2>Explicacion y buenas practicas</h2>
+  <ul><li>Use un solo &lt;h1&gt; que describa el tema principal y contin&#250;e la jerarqu&#237;a sin elegir niveles solo por su tama&#241;o.</li><li>Los comentarios sirven para documentar el c&#243;digo y no aparecen en la p&#225;gina.</li><li>&lt;strong&gt; indica importancia y &lt;em&gt; &#233;nfasis; ambos aportan significado adem&#225;s de su apariencia.</li><li>&lt;br&gt; es apropiado para una ruptura necesaria dentro de un texto, no para crear espacio visual.</li><li>La presentaci&#243;n visual se controlar&#225; despu&#233;s con CSS.</li></ul>
+  <h2>Codigo completo</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Jhakorn - Clase 02&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Titulo principal --&gt;
+    &lt;h1&gt;Jhakorn&lt;/h1&gt;
+
+    &lt;!-- Presentacion --&gt;
+    &lt;h2&gt;Servicio tecnico&lt;/h2&gt;
+    &lt;p&gt;
+        Brindamos soporte tecnico para computadoras e impresoras.
+    &lt;/p&gt;
+
+    &lt;!-- Servicios --&gt;
+    &lt;h2&gt;Nuestros servicios&lt;/h2&gt;
+
+    &lt;h3&gt;Computadoras&lt;/h3&gt;
+    &lt;p&gt;
+        Realizamos mantenimiento preventivo, diagnostico
+        y configuracion de programas.
+    &lt;/p&gt;
+
+    &lt;h3&gt;Impresoras&lt;/h3&gt;
+    &lt;p&gt;
+        Realizamos mantenimiento, limpieza y diagnostico
+        de problemas de impresion.
+    &lt;/p&gt;
+
+    &lt;!-- Informacion de contacto --&gt;
+    &lt;h2&gt;Contacto&lt;/h2&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Atencion:&lt;/strong&gt; lunes a viernes.&lt;br&gt;
+        &lt;em&gt;Servicio personalizado para cada cliente.&lt;/em&gt;
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <div class="practica"><strong>Practica sugerida:</strong> abre <code>clase-02.html</code> en el navegador, modifica textos y valores, guarda el archivo y recarga la pagina. Revisa que la estructura y la accesibilidad se conserven.</div>
+</section>
+<section class="clase">
+  <div class="kicker">CLASE 3 · HTML DESDE CERO</div>
+  <h1>Enlaces y botones</h1>
+  <p class="objetivo"><strong>Objetivo:</strong> Conectar paginas, recursos externos y acciones de contacto.</p>
+  <h2>Contenido de la clase</h2>
+  <ul><li>Enlace interno con ruta relativa</li><li>Enlace externo y nueva pesta&#241;a</li><li>Protocolos mailto: y tel:</li><li>Bot&#243;n &lt;button&gt;</li></ul>
+  <h2>Explicacion y buenas practicas</h2>
+  <ul><li>&lt;a&gt; crea un hiperv&#237;nculo y href indica el destino.</li><li>Una ruta como clase-02.html busca el archivo en la misma carpeta.</li><li>target=&quot;_blank&quot; abre otra pesta&#241;a; rel=&quot;noopener noreferrer&quot; protege la p&#225;gina de origen.</li><li>mailto: abre la aplicaci&#243;n de correo y tel: permite iniciar una llamada en dispositivos compatibles.</li><li>Un bot&#243;n no navega por s&#237; solo: necesita un formulario o JavaScript para ejecutar una acci&#243;n.</li><li>El texto del enlace debe describir claramente su destino.</li></ul>
+  <h2>Codigo completo</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Jhakorn - Clase 03&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Titulo principal --&gt;
+    &lt;h1&gt;Enlaces y botones&lt;/h1&gt;
+
+    &lt;!-- Enlace interno --&gt;
+    &lt;h2&gt;Navegacion entre paginas&lt;/h2&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;clase-02.html&quot;&gt;Volver a la Clase 02&lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;!-- Enlace externo --&gt;
+    &lt;h2&gt;Pagina externa&lt;/h2&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;https://www.google.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;
+            Abrir Google en otra pestana
+        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;!-- Enlace de correo --&gt;
+    &lt;h2&gt;Correo electronico&lt;/h2&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;mailto:contacto@jhakorn.com&quot;&gt;Enviar un correo&lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;!-- Enlace de telefono --&gt;
+    &lt;h2&gt;Telefono&lt;/h2&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;tel:+59170000000&quot;&gt;Llamar a Jhakorn&lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;!-- Boton sin accion por ahora --&gt;
+    &lt;h2&gt;Boton HTML&lt;/h2&gt;
+    &lt;button type=&quot;button&quot;&gt;Solicitar servicio&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <div class="practica"><strong>Practica sugerida:</strong> abre <code>clase-03.html</code> en el navegador, modifica textos y valores, guarda el archivo y recarga la pagina. Revisa que la estructura y la accesibilidad se conserven.</div>
+</section>
+<section class="clase">
+  <div class="kicker">CLASE 4 · HTML DESDE CERO</div>
+  <h1>Imagenes accesibles</h1>
+  <p class="objetivo"><strong>Objetivo:</strong> Insertar imagenes locales con dimensiones, texto alternativo y pie descriptivo.</p>
+  <h2>Contenido de la clase</h2>
+  <ul><li>Elemento &lt;img&gt; y atributo src</li><li>Texto alternativo alt</li><li>Dimensiones width y height</li><li>Agrupaci&#243;n con &lt;figure&gt; y &lt;figcaption&gt;</li></ul>
+  <h2>Explicacion y buenas practicas</h2>
+  <ul><li>&lt;img&gt; es un elemento vac&#237;o: no necesita etiqueta de cierre.</li><li>src contiene la ruta del archivo; aqu&#237; es una imagen SVG local.</li><li>alt comunica el contenido o funci&#243;n a quien no puede ver la imagen.</li><li>width y height reservan espacio y reducen saltos visuales mientras carga.</li><li>&lt;figure&gt; agrupa contenido aut&#243;nomo y &lt;figcaption&gt; ofrece una descripci&#243;n visible.</li><li>Una imagen decorativa debe usar alt=&quot;&quot;; una imagen informativa necesita un texto &#250;til.</li></ul>
+  <h2>Codigo completo</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Jhakorn - Clase 04&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Imagenes en HTML&lt;/h1&gt;
+
+    &lt;!-- Imagen local con descripcion alternativa --&gt;
+    &lt;img
+        src=&quot;imagen-jhakorn.svg&quot;
+        alt=&quot;Computadora que representa el servicio tecnico de Jhakorn&quot;
+        width=&quot;800&quot;
+        height=&quot;450&quot;
+    &gt;
+
+    &lt;!-- Imagen acompa&#241;ada por una descripcion visible --&gt;
+    &lt;figure&gt;
+        &lt;img
+            src=&quot;imagen-jhakorn.svg&quot;
+            alt=&quot;Ilustracion de una computadora con el simbolo de Jhakorn&quot;
+            width=&quot;400&quot;
+            height=&quot;225&quot;
+        &gt;
+        &lt;figcaption&gt;Ejemplo de imagen para la pagina de Jhakorn.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+
+    &lt;p&gt;
+        &lt;a href=&quot;clase-03.html&quot;&gt;Volver a la Clase 03&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <div class="practica"><strong>Practica sugerida:</strong> abre <code>clase-04.html</code> en el navegador, modifica textos y valores, guarda el archivo y recarga la pagina. Revisa que la estructura y la accesibilidad se conserven.</div>
+</section>
+<section class="clase">
+  <div class="kicker">CLASE 5 · HTML DESDE CERO</div>
+  <h1>Listas y tablas</h1>
+  <p class="objetivo"><strong>Objetivo:</strong> Representar colecciones, secuencias, definiciones y datos tabulares.</p>
+  <h2>Contenido de la clase</h2>
+  <ul><li>Lista sin orden &lt;ul&gt;</li><li>Lista ordenada &lt;ol&gt;</li><li>Lista descriptiva &lt;dl&gt;</li><li>Tabla con caption, thead y tbody</li><li>Filas &lt;tr&gt;, encabezados &lt;th&gt; y celdas &lt;td&gt;</li></ul>
+  <h2>Explicacion y buenas practicas</h2>
+  <ul><li>&lt;ul&gt; sirve cuando el orden no cambia el significado; &lt;ol&gt;, cuando la secuencia importa.</li><li>&lt;dl&gt; relaciona t&#233;rminos &lt;dt&gt; con descripciones &lt;dd&gt;.</li><li>Las tablas son para datos relacionados, no para dise&#241;ar la distribuci&#243;n de la p&#225;gina.</li><li>&lt;caption&gt; explica el prop&#243;sito de la tabla.</li><li>scope=&quot;col&quot; vincula cada encabezado con su columna y mejora la accesibilidad.</li><li>&lt;thead&gt; y &lt;tbody&gt; hacen expl&#237;cita la estructura de los datos.</li></ul>
+  <h2>Codigo completo</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Jhakorn - Clase 05&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Listas y tablas&lt;/h1&gt;
+
+    &lt;!-- Lista sin orden --&gt;
+    &lt;h2&gt;Servicios disponibles&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Mantenimiento de computadoras&lt;/li&gt;
+        &lt;li&gt;Soporte para impresoras&lt;/li&gt;
+        &lt;li&gt;Instalacion de programas&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;!-- Lista ordenada --&gt;
+    &lt;h2&gt;Proceso de atencion&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Recibir el equipo&lt;/li&gt;
+        &lt;li&gt;Realizar el diagnostico&lt;/li&gt;
+        &lt;li&gt;Informar el resultado&lt;/li&gt;
+        &lt;li&gt;Realizar el servicio autorizado&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;!-- Lista de descripcion --&gt;
+    &lt;h2&gt;Terminos frecuentes&lt;/h2&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;Diagnostico&lt;/dt&gt;
+        &lt;dd&gt;Revision para identificar la causa de un problema.&lt;/dd&gt;
+
+        &lt;dt&gt;Mantenimiento preventivo&lt;/dt&gt;
+        &lt;dd&gt;Servicio realizado para prevenir posibles fallas.&lt;/dd&gt;
+    &lt;/dl&gt;
+
+    &lt;!-- Tabla de servicios --&gt;
+    &lt;h2&gt;Tabla de servicios&lt;/h2&gt;
+    &lt;table&gt;
+        &lt;caption&gt;Servicios tecnicos de ejemplo&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th scope=&quot;col&quot;&gt;Servicio&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;Tipo de equipo&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;Modalidad&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Mantenimiento&lt;/td&gt;
+                &lt;td&gt;Computadora&lt;/td&gt;
+                &lt;td&gt;Presencial&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Limpieza&lt;/td&gt;
+                &lt;td&gt;Impresora&lt;/td&gt;
+                &lt;td&gt;Presencial&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Configuracion&lt;/td&gt;
+                &lt;td&gt;Windows&lt;/td&gt;
+                &lt;td&gt;Remota&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;
+        &lt;a href=&quot;clase-04.html&quot;&gt;Volver a la Clase 04&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <div class="practica"><strong>Practica sugerida:</strong> abre <code>clase-05.html</code> en el navegador, modifica textos y valores, guarda el archivo y recarga la pagina. Revisa que la estructura y la accesibilidad se conserven.</div>
+</section>
+<section class="clase">
+  <div class="kicker">CLASE 6 · HTML DESDE CERO</div>
+  <h1>Formularios</h1>
+  <p class="objetivo"><strong>Objetivo:</strong> Capturar datos mediante controles accesibles y validacion basica del navegador.</p>
+  <h2>Contenido de la clase</h2>
+  <ul><li>Formulario &lt;form&gt;, action y method</li><li>Etiquetas &lt;label&gt; e inputs</li><li>Tipos text, email, tel, radio y checkbox</li><li>Lista &lt;select&gt; y &lt;option&gt;</li><li>&#193;rea &lt;textarea&gt;</li><li>Agrupaci&#243;n &lt;fieldset&gt; y &lt;legend&gt;</li><li>Botones submit y reset</li><li>Validaci&#243;n required</li></ul>
+  <h2>Explicacion y buenas practicas</h2>
+  <ul><li>Cada control debe tener name para que su valor sea enviado.</li><li>El for de &lt;label&gt; debe coincidir con el id del control.</li><li>El tipo email activa validaci&#243;n b&#225;sica y teclados apropiados en m&#243;viles.</li><li>Los radios con el mismo name forman un grupo de elecci&#243;n &#250;nica.</li><li>required impide el env&#237;o vac&#237;o, pero un sistema real tambi&#233;n valida en el servidor.</li><li>method=&quot;get&quot; coloca los datos en la URL y no es adecuado para informaci&#243;n sensible.</li><li>action vac&#237;o env&#237;a a la misma p&#225;gina; esta pr&#225;ctica no almacena los datos.</li></ul>
+  <h2>Codigo completo</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Jhakorn - Clase 06&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Formulario de solicitud&lt;/h1&gt;
+
+    &lt;!-- Formulario de practica sin conexion a un servidor --&gt;
+    &lt;form action=&quot;&quot; method=&quot;get&quot;&gt;
+        &lt;p&gt;
+            &lt;label for=&quot;nombre&quot;&gt;Nombre:&lt;/label&gt;&lt;br&gt;
+            &lt;input type=&quot;text&quot; id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            &lt;label for=&quot;correo&quot;&gt;Correo:&lt;/label&gt;&lt;br&gt;
+            &lt;input type=&quot;email&quot; id=&quot;correo&quot; name=&quot;correo&quot; required&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            &lt;label for=&quot;telefono&quot;&gt;Telefono:&lt;/label&gt;&lt;br&gt;
+            &lt;input type=&quot;tel&quot; id=&quot;telefono&quot; name=&quot;telefono&quot;&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            &lt;label for=&quot;servicio&quot;&gt;Servicio:&lt;/label&gt;&lt;br&gt;
+            &lt;select id=&quot;servicio&quot; name=&quot;servicio&quot; required&gt;
+                &lt;option value=&quot;&quot;&gt;Selecciona una opcion&lt;/option&gt;
+                &lt;option value=&quot;computadora&quot;&gt;Soporte para computadora&lt;/option&gt;
+                &lt;option value=&quot;impresora&quot;&gt;Soporte para impresora&lt;/option&gt;
+                &lt;option value=&quot;programas&quot;&gt;Instalacion de programas&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/p&gt;
+
+        &lt;fieldset&gt;
+            &lt;legend&gt;Modalidad preferida&lt;/legend&gt;
+
+            &lt;input type=&quot;radio&quot; id=&quot;presencial&quot; name=&quot;modalidad&quot; value=&quot;presencial&quot; required&gt;
+            &lt;label for=&quot;presencial&quot;&gt;Presencial&lt;/label&gt;&lt;br&gt;
+
+            &lt;input type=&quot;radio&quot; id=&quot;remota&quot; name=&quot;modalidad&quot; value=&quot;remota&quot;&gt;
+            &lt;label for=&quot;remota&quot;&gt;Remota&lt;/label&gt;
+        &lt;/fieldset&gt;
+
+        &lt;p&gt;
+            &lt;label for=&quot;mensaje&quot;&gt;Describe el problema:&lt;/label&gt;&lt;br&gt;
+            &lt;textarea id=&quot;mensaje&quot; name=&quot;mensaje&quot; rows=&quot;5&quot; cols=&quot;40&quot; required&gt;&lt;/textarea&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;acepta&quot; name=&quot;acepta&quot; required&gt;
+            &lt;label for=&quot;acepta&quot;&gt;Acepto enviar esta solicitud de practica&lt;/label&gt;
+        &lt;/p&gt;
+
+        &lt;button type=&quot;submit&quot;&gt;Enviar solicitud&lt;/button&gt;
+        &lt;button type=&quot;reset&quot;&gt;Limpiar formulario&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;p&gt;
+        &lt;a href=&quot;clase-05.html&quot;&gt;Volver a la Clase 05&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <div class="practica"><strong>Practica sugerida:</strong> abre <code>clase-06.html</code> en el navegador, modifica textos y valores, guarda el archivo y recarga la pagina. Revisa que la estructura y la accesibilidad se conserven.</div>
+</section>
+<section class="clase">
+  <div class="kicker">CLASE 7 · HTML DESDE CERO</div>
+  <h1>HTML semantico y accesibilidad</h1>
+  <p class="objetivo"><strong>Objetivo:</strong> Dividir una pagina en regiones con significado para usuarios, buscadores y tecnologias de asistencia.</p>
+  <h2>Contenido de la clase</h2>
+  <ul><li>Regiones header, nav, main y footer</li><li>Secciones &lt;section&gt; y contenidos &lt;article&gt;</li><li>Contenido complementario &lt;aside&gt;</li><li>Navegaci&#243;n interna con identificadores</li><li>Descripci&#243;n meta y atributos ARIA</li></ul>
+  <h2>Explicacion y buenas practicas</h2>
+  <ul><li>&lt;header&gt; presenta la p&#225;gina; &lt;nav&gt; agrupa la navegaci&#243;n principal.</li><li>&lt;main&gt; contiene el contenido principal y normalmente aparece una sola vez.</li><li>&lt;section&gt; agrupa un tema; suele incluir un encabezado.</li><li>&lt;article&gt; identifica una unidad reutilizable o independiente.</li><li>&lt;aside&gt; contiene informaci&#243;n relacionada pero secundaria.</li><li>&lt;footer&gt; re&#250;ne cierre, autor&#237;a o enlaces finales.</li><li>href=&quot;#servicios&quot; lleva al elemento id=&quot;servicios&quot;.</li><li>aria-label distingue una regi&#243;n cuando hace falta un nombre accesible.</li></ul>
+  <h2>Codigo completo</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Servicios de soporte tecnico para computadoras e impresoras.&quot;&gt;
+    &lt;title&gt;Jhakorn - Clase 07&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Encabezado principal --&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Jhakorn&lt;/h1&gt;
+        &lt;p&gt;Soluciones para computadoras e impresoras&lt;/p&gt;
+
+        &lt;!-- Menu de navegacion --&gt;
+        &lt;nav aria-label=&quot;Navegacion principal&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#inicio&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#servicios&quot;&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#consejos&quot;&gt;Consejos&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Contenido principal unico de la pagina --&gt;
+    &lt;main&gt;
+        &lt;section id=&quot;inicio&quot;&gt;
+            &lt;h2&gt;Bienvenido&lt;/h2&gt;
+            &lt;p&gt;
+                Brindamos soporte tecnico para hogares y pequenos negocios.
+            &lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;servicios&quot;&gt;
+            &lt;h2&gt;Servicios&lt;/h2&gt;
+
+            &lt;article&gt;
+                &lt;h3&gt;Soporte para computadoras&lt;/h3&gt;
+                &lt;p&gt;
+                    Realizamos diagnostico, mantenimiento y configuracion.
+                &lt;/p&gt;
+            &lt;/article&gt;
+
+            &lt;article&gt;
+                &lt;h3&gt;Soporte para impresoras&lt;/h3&gt;
+                &lt;p&gt;
+                    Revisamos problemas de impresion, conexion y limpieza.
+                &lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;consejos&quot;&gt;
+            &lt;h2&gt;Consejos tecnicos&lt;/h2&gt;
+
+            &lt;article&gt;
+                &lt;h3&gt;Realiza copias de seguridad&lt;/h3&gt;
+                &lt;p&gt;
+                    Guarda tus archivos importantes en mas de una ubicacion.
+                &lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;!-- Informacion relacionada pero complementaria --&gt;
+        &lt;aside&gt;
+            &lt;h2&gt;Recomendacion&lt;/h2&gt;
+            &lt;p&gt;
+                No instales programas desde sitios que no sean confiables.
+            &lt;/p&gt;
+        &lt;/aside&gt;
+
+        &lt;section id=&quot;contacto&quot;&gt;
+            &lt;h2&gt;Contacto&lt;/h2&gt;
+            &lt;p&gt;
+                &lt;a href=&quot;mailto:contacto@jhakorn.com&quot;&gt;Enviar un correo&lt;/a&gt;
+            &lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;!-- Pie de pagina --&gt;
+    &lt;footer&gt;
+        &lt;p&gt;Jhakorn - Servicio tecnico&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;clase-06.html&quot;&gt;Volver a la Clase 06&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <div class="practica"><strong>Practica sugerida:</strong> abre <code>clase-07.html</code> en el navegador, modifica textos y valores, guarda el archivo y recarga la pagina. Revisa que la estructura y la accesibilidad se conserven.</div>
+</section>
+<section class="clase">
+  <div class="kicker">CLASE 8 · HTML DESDE CERO</div>
+  <h1>Proyecto integrador: pagina completa</h1>
+  <p class="objetivo"><strong>Objetivo:</strong> Combinar en una sola pagina todos los componentes estudiados en las clases anteriores.</p>
+  <h2>Contenido de la clase</h2>
+  <ul><li>Estructura sem&#225;ntica completa</li><li>Men&#250; de navegaci&#243;n interno</li><li>Presentaci&#243;n con imagen accesible</li><li>Servicios mediante art&#237;culos y listas</li><li>Proceso con lista y tabla</li><li>Consejo complementario</li><li>Formulario de contacto</li><li>Pie y enlaces de retorno</li></ul>
+  <h2>Explicacion y buenas practicas</h2>
+  <ul><li>La p&#225;gina re&#250;ne contenido, navegaci&#243;n y captura de datos siguiendo una jerarqu&#237;a coherente.</li><li>aria-labelledby conecta la secci&#243;n con el t&#237;tulo que la nombra.</li><li>Los id deben ser &#250;nicos y pueden servir como destinos de navegaci&#243;n y asociaciones accesibles.</li><li>La tabla resume modalidades; la lista explica el proceso paso a paso.</li><li>El formulario a&#250;n es demostrativo: para funcionar requiere un servidor o servicio que procese el env&#237;o.</li><li>El resultado es HTML puro; CSS puede a&#241;adirse despu&#233;s sin cambiar su estructura sem&#225;ntica.</li></ul>
+  <h2>Codigo completo</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Soporte tecnico para computadoras e impresoras en Jhakorn.&quot;&gt;
+    &lt;title&gt;Jhakorn - Soporte tecnico&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header id=&quot;inicio&quot;&gt;
+        &lt;h1&gt;Jhakorn&lt;/h1&gt;
+        &lt;p&gt;Soporte tecnico para computadoras e impresoras&lt;/p&gt;
+
+        &lt;nav aria-label=&quot;Navegacion principal&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#inicio&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#servicios&quot;&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#proceso&quot;&gt;Proceso&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section aria-labelledby=&quot;titulo-presentacion&quot;&gt;
+            &lt;h2 id=&quot;titulo-presentacion&quot;&gt;Soluciones tecnicas para tu equipo&lt;/h2&gt;
+            &lt;p&gt;
+                Ayudamos a diagnosticar, mantener y configurar tus dispositivos.
+            &lt;/p&gt;
+
+            &lt;img
+                src=&quot;imagen-jhakorn.svg&quot;
+                alt=&quot;Computadora que representa los servicios tecnicos de Jhakorn&quot;
+                width=&quot;800&quot;
+                height=&quot;450&quot;
+            &gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;servicios&quot;&gt;
+            &lt;h2&gt;Servicios&lt;/h2&gt;
+
+            &lt;article&gt;
+                &lt;h3&gt;Computadoras&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Diagnostico de fallas&lt;/li&gt;
+                    &lt;li&gt;Mantenimiento preventivo&lt;/li&gt;
+                    &lt;li&gt;Instalacion de programas&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+
+            &lt;article&gt;
+                &lt;h3&gt;Impresoras&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Limpieza y mantenimiento&lt;/li&gt;
+                    &lt;li&gt;Configuracion de impresion&lt;/li&gt;
+                    &lt;li&gt;Diagnostico de problemas&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;proceso&quot;&gt;
+            &lt;h2&gt;Proceso de atencion&lt;/h2&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Recibimos tu consulta&lt;/li&gt;
+                &lt;li&gt;Revisamos el problema&lt;/li&gt;
+                &lt;li&gt;Explicamos la solucion propuesta&lt;/li&gt;
+                &lt;li&gt;Realizamos el trabajo autorizado&lt;/li&gt;
+            &lt;/ol&gt;
+
+            &lt;table&gt;
+                &lt;caption&gt;Modalidades disponibles&lt;/caption&gt;
+                &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th scope=&quot;col&quot;&gt;Modalidad&lt;/th&gt;
+                        &lt;th scope=&quot;col&quot;&gt;Uso recomendado&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Presencial&lt;/td&gt;
+                        &lt;td&gt;Mantenimiento fisico del equipo&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Remota&lt;/td&gt;
+                        &lt;td&gt;Configuracion y soporte de programas&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/section&gt;
+
+        &lt;aside&gt;
+            &lt;h2&gt;Consejo importante&lt;/h2&gt;
+            &lt;p&gt;
+                Realiza una copia de seguridad antes de modificar tu sistema.
+            &lt;/p&gt;
+        &lt;/aside&gt;
+
+        &lt;section id=&quot;contacto&quot;&gt;
+            &lt;h2&gt;Solicita informacion&lt;/h2&gt;
+
+            &lt;form action=&quot;&quot; method=&quot;get&quot;&gt;
+                &lt;p&gt;
+                    &lt;label for=&quot;nombre&quot;&gt;Nombre:&lt;/label&gt;&lt;br&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;nombre&quot; name=&quot;nombre&quot; required&gt;
+                &lt;/p&gt;
+
+                &lt;p&gt;
+                    &lt;label for=&quot;correo&quot;&gt;Correo:&lt;/label&gt;&lt;br&gt;
+                    &lt;input type=&quot;email&quot; id=&quot;correo&quot; name=&quot;correo&quot; required&gt;
+                &lt;/p&gt;
+
+                &lt;p&gt;
+                    &lt;label for=&quot;tipo-servicio&quot;&gt;Servicio:&lt;/label&gt;&lt;br&gt;
+                    &lt;select id=&quot;tipo-servicio&quot; name=&quot;servicio&quot; required&gt;
+                        &lt;option value=&quot;&quot;&gt;Selecciona una opcion&lt;/option&gt;
+                        &lt;option value=&quot;computadora&quot;&gt;Computadora&lt;/option&gt;
+                        &lt;option value=&quot;impresora&quot;&gt;Impresora&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/p&gt;
+
+                &lt;p&gt;
+                    &lt;label for=&quot;mensaje&quot;&gt;Mensaje:&lt;/label&gt;&lt;br&gt;
+                    &lt;textarea id=&quot;mensaje&quot; name=&quot;mensaje&quot; rows=&quot;5&quot; cols=&quot;40&quot; required&gt;&lt;/textarea&gt;
+                &lt;/p&gt;
+
+                &lt;button type=&quot;submit&quot;&gt;Enviar solicitud de practica&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Jhakorn - Servicio tecnico&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;#inicio&quot;&gt;Volver al inicio&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;clase-07.html&quot;&gt;Volver a la Clase 07&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <div class="practica"><strong>Practica sugerida:</strong> abre <code>clase-08.html</code> en el navegador, modifica textos y valores, guarda el archivo y recarga la pagina. Revisa que la estructura y la accesibilidad se conserven.</div>
+</section>
+<section class="cierre"><div class="kicker">RESUMEN FINAL</div><h1>Lo aprendido</h1><p>Al completar estas ocho clases puedes estructurar una pagina HTML5 clara, navegar entre contenidos, presentar imagenes y datos, recopilar informacion con formularios y organizar una pagina con etiquetas semanticas y criterios basicos de accesibilidad.</p><div class="ruta"><span>Contenido</span><span>Navegacion</span><span>Multimedia</span><span>Datos</span><span>Formularios</span><span>Semantica</span></div><h2>Siguiente paso recomendado</h2><p>Agregar CSS en un archivo separado para trabajar colores, tipografia, espaciado, diseno adaptable y componentes visuales, conservando el HTML semantico construido aqui.</p></section>
+</body></html>

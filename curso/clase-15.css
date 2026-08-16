@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f7fa;
+    color: #243447;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #123b5d;
+    color: white;
+    box-shadow: 0 4px 14px rgb(0 0 0 / 15%);
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.marca {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-enlace {
+    display: block;
+    padding: 0.55rem 0.85rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+}
+
+.menu-enlace:hover,
+.menu-enlace.activo {
+    background-color: rgb(255 255 255 / 15%);
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.presentacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    min-height: 70vh;
+    padding: 4rem 0;
+}
+
+.presentacion h1 {
+    margin: 0;
+    color: #123b5d;
+    font-size: 3rem;
+    line-height: 1.15;
+}
+
+.descripcion {
+    max-width: 35rem;
+    font-size: 1.15rem;
+}
+
+.presentacion img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 18px 40px rgb(18 59 93 / 20%);
+}
+
+.etiqueta {
+    margin-bottom: 0.4rem;
+    color: #087ea4;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.boton {
+    display: inline-block;
+    padding: 0.75rem 1.1rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+}
+
+.boton-principal {
+    background-color: #087ea4;
+    color: white;
+}
+
+.boton-principal:hover {
+    background-color: #065f7d;
+}
+
+.boton-secundario {
+    border-color: #087ea4;
+    color: #087ea4;
+}
+
+.boton-secundario:hover {
+    background-color: #d9eef7;
+}
+
+.boton:focus-visible,
+.menu-enlace:focus-visible,
+.tarjeta-enlace:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+.seccion {
+    padding: 4rem 0;
+}
+
+.seccion-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.seccion-encabezado h2,
+.contacto h2 {
+    margin: 0;
+    color: #123b5d;
+    font-size: 2rem;
+}
+
+.rejilla-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.tarjeta {
+    padding: 1.5rem;
+    background-color: white;
+    border: 1px solid #d7e0e8;
+    border-radius: 0.8rem;
+    box-shadow: 0 8px 24px rgb(18 59 93 / 8%);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgb(18 59 93 / 15%);
+}
+
+.tarjeta h3 {
+    margin-bottom: 0.5rem;
+    color: #123b5d;
+}
+
+.icono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: #d9eef7;
+    color: #087ea4;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.tarjeta-enlace {
+    color: #087ea4;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.tarjeta-enlace:hover {
+    text-decoration: underline;
+}
+
+.contacto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin: 4rem 0;
+    padding: 2rem;
+    background-color: #d9eef7;
+    border-radius: 1rem;
+}
+
+footer {
+    padding: 1.5rem;
+    background-color: #123b5d;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: #bdefff;
+}
+
+@media (max-width: 700px) {
+    .barra,
+    .seccion-encabezado,
+    .contacto {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .presentacion {
+        grid-template-columns: 1fr;
+    }
+
+    .presentacion h1 {
+        font-size: 2.25rem;
+    }
+}

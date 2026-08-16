@@ -1,0 +1,90 @@
+/* Selector universal */
+* {
+    box-sizing: border-box;
+}
+
+/* Selector de elemento */
+body {
+    margin: 0;
+    background-color: #eef3f8;
+    color: #243447;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Selector de identificador */
+#encabezado-principal {
+    padding: 30px 20px;
+    background-color: #123b5d;
+    color: white;
+    text-align: center;
+}
+
+#encabezado-principal h1 {
+    margin: 0;
+}
+
+/* Selector de elemento */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+h2 {
+    color: #123b5d;
+}
+
+/* Selector de clase reutilizable */
+.tarjeta {
+    margin-bottom: 18px;
+    padding: 18px;
+    background-color: white;
+    border: 1px solid #cad5df;
+    border-radius: 8px;
+}
+
+/* Un elemento puede tener mas de una clase */
+.destacado {
+    border-left: 6px solid #f59e0b;
+    background-color: #fff8e6;
+}
+
+/* Selector descendiente */
+.tarjeta h3 {
+    margin-top: 0;
+    color: #087ea4;
+}
+
+/* La misma clase se usa en varios enlaces */
+.boton {
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: #087ea4;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Pseudoclase */
+.boton:hover {
+    background-color: #065f7d;
+}
+
+/* Combinacion de identificador y clase */
+#contacto .aviso {
+    padding: 12px;
+    background-color: #d9eef7;
+    border-left: 4px solid #087ea4;
+}
+
+footer {
+    padding: 20px;
+    background-color: #123b5d;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: #bdefff;
+}

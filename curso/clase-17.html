@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 17 - Animaciones CSS</title>
+    <link rel="stylesheet" href="clase-17.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor">
+            <h1>Animaciones y efectos CSS</h1>
+            <p>Movimiento con proposito y sin JavaScript</p>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section>
+            <h2>Transicion de boton</h2>
+            <p>Coloca el cursor sobre el boton o seleccionalo con la tecla Tab.</p>
+            <a class="boton" href="#tarjetas">Ver tarjetas</a>
+        </section>
+
+        <section id="tarjetas">
+            <h2>Transformacion de tarjetas</h2>
+
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <div class="icono" aria-hidden="true">PC</div>
+                    <h3>Computadoras</h3>
+                    <p>La tarjeta sube ligeramente cuando recibe el cursor.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono" aria-hidden="true">PR</div>
+                    <h3>Impresoras</h3>
+                    <p>La sombra cambia de forma gradual.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono" aria-hidden="true">SW</div>
+                    <h3>Programas</h3>
+                    <p>La escala aumenta sin cambiar el espacio del documento.</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Animacion con keyframes</h2>
+
+            <div class="estado">
+                <span class="indicador" aria-hidden="true"></span>
+                <span>Servicio disponible</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Animacion de entrada</h2>
+
+            <div class="mensaje">
+                <h3>Bienvenido a Jhakorn</h3>
+                <p>Este bloque aparece combinando movimiento y opacidad.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 17</p>
+        <a href="clase-16.html">Volver a la Clase 16</a>
+    </footer>
+</body>
+</html>

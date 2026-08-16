@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jhakorn ofrece soporte técnico, electrónica y automatización en Cochabamba, Bolivia.">
+    <meta name="theme-color" content="#071b2b">
+    <title>Jhakorn | Soporte técnico y electrónica</title>
+    <link rel="icon" href="logo-jhakorn.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="jhakorn-proyecto.css">
+    <script src="jhakorn-proyecto.js" defer></script>
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header class="encabezado" id="inicio">
+        <div class="contenedor barra">
+            <a class="marca" href="#inicio" aria-label="Jhakorn, inicio">
+                <img src="logo-jhakorn.svg" alt="" width="48" height="48">
+                <span>JHAKORN</span>
+            </a>
+
+            <div class="controles">
+                <button id="boton-tema" class="boton-icono" type="button" aria-pressed="false">
+                    Modo oscuro
+                </button>
+                <button id="boton-menu" class="boton-icono boton-menu" type="button"
+                    aria-expanded="false" aria-controls="menu-principal">
+                    Menú
+                </button>
+            </div>
+
+            <nav id="menu-principal" class="navegacion" aria-label="Navegación principal">
+                <ul class="menu">
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#perfil">Perfil</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+        <section class="hero">
+            <div class="contenedor hero-rejilla">
+                <div class="hero-contenido">
+                    <p class="etiqueta">Ingeniería electrónica y soporte técnico</p>
+                    <h1>Tecnología que vuelve a funcionar</h1>
+                    <p class="hero-texto">
+                        Diagnóstico, mantenimiento y soluciones claras para computadoras,
+                        impresoras, redes y sistemas electrónicos en Cochabamba.
+                    </p>
+                    <div class="acciones">
+                        <a class="boton boton-principal" href="https://wa.me/59177908460" target="_blank" rel="noopener noreferrer">
+                            Escribir por WhatsApp
+                        </a>
+                        <a class="boton boton-secundario" href="#servicios">Ver servicios</a>
+                    </div>
+                    <ul class="datos-rapidos" aria-label="Información principal">
+                        <li><strong>Cochabamba</strong><span>Bolivia</span></li>
+                        <li><strong>17:00 - 22:00</strong><span>Horario de atención</span></li>
+                        <li><strong>Presencial y remoto</strong><span>También a domicilio</span></li>
+                    </ul>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="orbita orbita-uno"></div>
+                    <div class="orbita orbita-dos"></div>
+                    <img src="logo-jhakorn.svg" alt="" width="512" height="512">
+                    <span class="nodo nodo-uno">PC</span>
+                    <span class="nodo nodo-dos">IoT</span>
+                    <span class="nodo nodo-tres">NET</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion" id="servicios">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <div>
+                        <p class="etiqueta">Servicios</p>
+                        <h2>Soluciones técnicas integrales</h2>
+                    </div>
+                    <p>Evaluamos cada caso y explicamos la solución antes de realizar el trabajo.</p>
+                </div>
+
+                <div class="rejilla-servicios">
+                    <article class="tarjeta">
+                        <span class="codigo">01</span>
+                        <h3>Computadoras</h3>
+                        <p>Diagnóstico, mantenimiento preventivo, optimización y configuración de Windows.</p>
+                    </article>
+                    <article class="tarjeta">
+                        <span class="codigo">02</span>
+                        <h3>Impresoras</h3>
+                        <p>Limpieza, mantenimiento, instalación y solución de problemas de impresión.</p>
+                    </article>
+                    <article class="tarjeta">
+                        <span class="codigo">03</span>
+                        <h3>Electrónica</h3>
+                        <p>Revisión de circuitos, fuentes, sensores y equipos electrónicos de baja tensión.</p>
+                    </article>
+                    <article class="tarjeta">
+                        <span class="codigo">04</span>
+                        <h3>Redes</h3>
+                        <p>Configuración de routers, Wi-Fi, equipos compartidos y conectividad local.</p>
+                    </article>
+                    <article class="tarjeta">
+                        <span class="codigo">05</span>
+                        <h3>Automatización</h3>
+                        <p>Scripts para instalaciones, configuraciones repetitivas y soporte controlado.</p>
+                    </article>
+                    <article class="tarjeta">
+                        <span class="codigo">06</span>
+                        <h3>Soporte remoto</h3>
+                        <p>Asistencia guiada para configuraciones y problemas que no requieren intervención física.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion seccion-oscura" id="proceso">
+            <div class="contenedor">
+                <p class="etiqueta">Proceso de trabajo</p>
+                <h2>Sin sorpresas y con autorización</h2>
+                <ol class="pasos">
+                    <li><span>01</span><div><h3>Consulta</h3><p>Describe el equipo y el problema observado.</p></div></li>
+                    <li><span>02</span><div><h3>Diagnóstico</h3><p>Identificamos la causa y las alternativas disponibles.</p></div></li>
+                    <li><span>03</span><div><h3>Autorización</h3><p>Explicamos el trabajo antes de realizarlo.</p></div></li>
+                    <li><span>04</span><div><h3>Solución</h3><p>Ejecutamos, verificamos y entregamos recomendaciones.</p></div></li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="seccion" id="perfil">
+            <div class="contenedor perfil-rejilla">
+                <div class="perfil-marca">
+                    <img src="logo-jhakorn.svg" alt="Logo de Jhakorn" width="260" height="260">
+                </div>
+                <div>
+                    <p class="etiqueta">Perfil técnico</p>
+                    <h2>Ingeniería aplicada a problemas reales</h2>
+                    <p>
+                        Jhakorn combina formación en ingeniería electrónica con experiencia en soporte
+                        de computadoras e impresoras. El objetivo es diagnosticar con criterio técnico,
+                        comunicar con claridad y proponer soluciones prácticas.
+                    </p>
+                    <ul class="lista-verificacion">
+                        <li>Diagnóstico antes de reemplazar componentes</li>
+                        <li>Automatización mediante scripts controlados</li>
+                        <li>Explicación comprensible para cada cliente</li>
+                        <li>Atención presencial, remota y a domicilio</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion contacto" id="contacto">
+            <div class="contenedor contacto-rejilla">
+                <div>
+                    <p class="etiqueta">Contacto</p>
+                    <h2>Conversemos sobre tu equipo</h2>
+                    <p>Completa el formulario y prepararemos un mensaje para WhatsApp.</p>
+                    <address class="datos-contacto">
+                        <a href="tel:+59177908460">+591 77908460</a>
+                        <a href="mailto:ejemplo@gmail.com">ejemplo@gmail.com</a>
+                        <span>Cochabamba, Bolivia</span>
+                        <span>Atención de 17:00 a 22:00</span>
+                    </address>
+                </div>
+
+                <form id="formulario-contacto" class="formulario" novalidate>
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" autocomplete="name">
+                        <p id="error-nombre" class="error"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="servicio">Servicio</label>
+                        <select id="servicio" name="servicio">
+                            <option value="">Selecciona una opción</option>
+                            <option>Computadoras</option>
+                            <option>Impresoras</option>
+                            <option>Electrónica</option>
+                            <option>Redes</option>
+                            <option>Automatización</option>
+                            <option>Soporte remoto</option>
+                        </select>
+                        <p id="error-servicio" class="error"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="mensaje">Describe el problema</label>
+                        <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+                        <p id="error-mensaje" class="error"></p>
+                    </div>
+                    <button class="boton boton-principal" type="submit">Preparar mensaje de WhatsApp</button>
+                    <p id="resultado-formulario" class="resultado" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <a class="whatsapp" href="https://wa.me/59177908460" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">WA</a>
+
+    <footer>
+        <div class="contenedor pie">
+            <p>Jhakorn <span id="anio"></span> | Cochabamba, Bolivia</p>
+            <a href="#inicio">Volver al inicio</a>
+        </div>
+    </footer>
+</body>
+</html>

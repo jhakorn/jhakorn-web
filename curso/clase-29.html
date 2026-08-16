@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 29 - localStorage</title>
+    <link rel="stylesheet" href="clase-29.css">
+    <script src="clase-29.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor barra">
+            <a class="marca" href="#inicio">Jhakorn</a>
+            <button id="boton-tema" class="boton" type="button" aria-pressed="false">
+                Activar modo oscuro
+            </button>
+        </div>
+    </header>
+
+    <main class="contenedor" id="inicio">
+        <section class="hero">
+            <p class="etiqueta">JavaScript desde cero</p>
+            <h1>Preferencias guardadas</h1>
+            <p>
+                Selecciona un tema, recarga la pagina y comprueba que se conserva.
+            </p>
+        </section>
+
+        <section class="rejilla">
+            <article class="tarjeta">
+                <h2>Tema actual</h2>
+                <p id="tema-actual" aria-live="polite">Cargando...</p>
+            </article>
+
+            <article class="tarjeta">
+                <h2>Preferencia guardada</h2>
+                <p id="preferencia-guardada">Sin revisar</p>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2>Controles de almacenamiento</h2>
+            <p>
+                El primer boton cambia y guarda el tema. El segundo elimina la preferencia.
+            </p>
+
+            <div class="acciones">
+                <button id="guardar-claro" class="boton boton-secundario" type="button">
+                    Guardar tema claro
+                </button>
+                <button id="guardar-oscuro" class="boton boton-secundario" type="button">
+                    Guardar tema oscuro
+                </button>
+                <button id="restablecer" class="boton boton-peligro" type="button">
+                    Usar tema del sistema
+                </button>
+            </div>
+
+            <p id="mensaje" class="mensaje" aria-live="polite">
+                Todavia no realizaste una accion.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 29</p>
+        <a href="clase-28.html">Volver a la Clase 28</a>
+    </footer>
+</body>
+</html>

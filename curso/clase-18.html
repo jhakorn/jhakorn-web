@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 18 - Variables CSS</title>
+    <link rel="stylesheet" href="clase-18.css">
+</head>
+<body>
+    <header class="encabezado" id="inicio">
+        <div class="contenedor barra">
+            <a class="marca" href="#inicio">Jhakorn</a>
+            <nav aria-label="Navegacion principal">
+                <ul class="menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="presentacion">
+            <div>
+                <p class="etiqueta">Variables CSS</p>
+                <h1>Un diseno facil de mantener</h1>
+                <p>
+                    Los colores y espacios principales se controlan desde un solo lugar.
+                </p>
+                <a class="boton" href="#servicios">Ver servicios</a>
+            </div>
+
+            <img
+                src="imagen-jhakorn.svg"
+                alt="Computadora que representa los servicios tecnicos de Jhakorn"
+                width="800"
+                height="450"
+            >
+        </section>
+
+        <section id="servicios">
+            <h2>Servicios</h2>
+
+            <div class="rejilla">
+                <article class="tarjeta">
+                    <h3>Computadoras</h3>
+                    <p>Diagnostico, mantenimiento y configuracion.</p>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Impresoras</h3>
+                    <p>Limpieza y solucion de problemas de impresion.</p>
+                </article>
+
+                <article class="tarjeta tarjeta-alerta">
+                    <h3>Servicio urgente</h3>
+                    <p>Esta tarjeta cambia una variable solamente en su interior.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <div>
+                <h2>Solicita informacion</h2>
+                <p>Consulta la disponibilidad del servicio que necesitas.</p>
+            </div>
+            <a class="boton" href="mailto:contacto@jhakorn.com">Contactar</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 18</p>
+        <a href="clase-17.html">Volver a la Clase 17</a>
+    </footer>
+</body>
+</html>

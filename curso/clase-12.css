@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    background-color: #edf3f8;
+    color: #243447;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.encabezado {
+    min-height: 30vh;
+    padding: 2rem 1rem;
+    background-color: #123b5d;
+    color: white;
+    text-align: center;
+}
+
+.encabezado h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    color: #123b5d;
+}
+
+.caja-px {
+    width: 300px;
+    padding: 20px;
+    background-color: #d9eef7;
+    border: 2px solid #087ea4;
+}
+
+.contenedor {
+    width: 100%;
+    padding: 1rem;
+    background-color: #cbd5e1;
+}
+
+.caja-porcentaje {
+    width: 70%;
+    padding: 1rem;
+    background-color: white;
+    border-left: 5px solid #f59e0b;
+}
+
+.caja-rem {
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid #cad5df;
+    border-radius: 0.75rem;
+}
+
+.caja-rem h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.caja-viewport {
+    width: 70vw;
+    min-height: 25vh;
+    padding: 1rem;
+    background-color: #fff3cd;
+    border: 2px dashed #d69e00;
+}
+
+.tarjeta-adaptable {
+    width: 100%;
+    max-width: 600px;
+    min-height: 150px;
+    padding: 1.5rem;
+    background-color: white;
+    border-left: 6px solid #087ea4;
+    border-radius: 0.5rem;
+}
+
+.tarjeta-adaptable h3 {
+    margin-top: 0;
+    color: #087ea4;
+}
+
+footer {
+    padding: 1.5rem;
+    background-color: #123b5d;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: #bdefff;
+}

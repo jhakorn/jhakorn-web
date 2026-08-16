@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios tecnicos para computadoras e impresoras de Jhakorn.">
+    <title>Jhakorn - Servicios tecnicos</title>
+    <link rel="stylesheet" href="clase-19.css">
+</head>
+<body>
+    <header class="encabezado" id="inicio">
+        <div class="contenedor barra">
+            <a class="marca" href="#inicio">Jhakorn</a>
+
+            <nav aria-label="Navegacion principal">
+                <ul class="menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero contenedor">
+            <div class="hero-contenido">
+                <p class="etiqueta">Soporte tecnico confiable</p>
+                <h1>Soluciones claras para tus equipos</h1>
+                <p class="hero-descripcion">
+                    Diagnostico, mantenimiento y configuracion para computadoras e impresoras.
+                </p>
+
+                <div class="acciones">
+                    <a class="boton boton-principal" href="#contacto">Solicitar servicio</a>
+                    <a class="boton boton-secundario" href="#servicios">Conocer servicios</a>
+                </div>
+
+                <ul class="ventajas" aria-label="Ventajas del servicio">
+                    <li>Explicacion clara</li>
+                    <li>Atencion personalizada</li>
+                    <li>Soluciones autorizadas</li>
+                </ul>
+            </div>
+
+            <img
+                src="imagen-jhakorn.svg"
+                alt="Computadora que representa los servicios tecnicos de Jhakorn"
+                width="800"
+                height="450"
+            >
+        </section>
+
+        <section class="seccion seccion-clara" id="servicios">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <div>
+                        <p class="etiqueta">Servicios</p>
+                        <h2>Como podemos ayudarte</h2>
+                    </div>
+                    <p>Selecciona la categoria relacionada con tu equipo.</p>
+                </div>
+
+                <div class="rejilla-servicios">
+                    <article class="tarjeta">
+                        <div class="icono" aria-hidden="true">PC</div>
+                        <h3>Computadoras</h3>
+                        <p>Diagnostico, limpieza, mantenimiento y configuracion.</p>
+                        <a href="#contacto">Consultar servicio</a>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="icono" aria-hidden="true">PR</div>
+                        <h3>Impresoras</h3>
+                        <p>Limpieza y solucion de problemas de conexion e impresion.</p>
+                        <a href="#contacto">Consultar servicio</a>
+                    </article>
+
+                    <article class="tarjeta">
+                        <div class="icono" aria-hidden="true">SW</div>
+                        <h3>Programas</h3>
+                        <p>Instalacion y configuracion de software autorizado.</p>
+                        <a href="#contacto">Consultar servicio</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion contenedor" id="proceso">
+            <div class="titulo-seccion">
+                <div>
+                    <p class="etiqueta">Proceso</p>
+                    <h2>Atencion paso a paso</h2>
+                </div>
+                <p>Antes de realizar un trabajo, explicamos la solucion propuesta.</p>
+            </div>
+
+            <ol class="pasos">
+                <li>
+                    <span class="numero">01</span>
+                    <div>
+                        <h3>Consulta</h3>
+                        <p>Recibimos la descripcion inicial del problema.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="numero">02</span>
+                    <div>
+                        <h3>Diagnostico</h3>
+                        <p>Revisamos el equipo para identificar la causa.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="numero">03</span>
+                    <div>
+                        <h3>Solucion</h3>
+                        <p>Realizamos solamente el trabajo autorizado.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="seccion seccion-clara" id="contacto">
+            <div class="contenedor contacto-rejilla">
+                <div class="contacto-informacion">
+                    <p class="etiqueta">Contacto</p>
+                    <h2>Solicita informacion</h2>
+                    <p>
+                        Completa esta demostracion para practicar el diseno de formularios.
+                    </p>
+
+                    <aside class="aviso">
+                        <strong>Practica local:</strong>
+                        este formulario todavia no envia mensajes a Internet.
+                    </aside>
+                </div>
+
+                <form class="formulario" action="" method="get">
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="servicio">Servicio</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="">Selecciona una opcion</option>
+                            <option value="computadora">Computadora</option>
+                            <option value="impresora">Impresora</option>
+                            <option value="programas">Programas</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+
+                    <button class="boton boton-principal" type="submit">Enviar practica</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenedor pie-contenido">
+            <p>Jhakorn - Mini proyecto CSS</p>
+            <div class="pie-enlaces">
+                <a href="#inicio">Volver al inicio</a>
+                <a href="clase-18.html">Volver a la Clase 18</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

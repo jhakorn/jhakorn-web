@@ -1,0 +1,133 @@
+/* Selector universal: cambia la forma de calcular los tamanos */
+* {
+    box-sizing: border-box;
+}
+
+/* Selector de elemento: aplica estilos a toda la pagina */
+body {
+    margin: 0;
+    background-color: #f2f6fa;
+    color: #243447;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Selector de clase: se aplica al encabezado */
+.encabezado {
+    background-color: #123b5d;
+    color: white;
+    padding: 24px;
+    text-align: center;
+}
+
+.encabezado h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+a {
+    color: #087ea4;
+    text-decoration: none;
+}
+
+.encabezado a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+h2 {
+    color: #123b5d;
+    border-bottom: 2px solid #28a7c7;
+    padding-bottom: 6px;
+}
+
+.presentacion img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 4px solid white;
+    border-radius: 12px;
+}
+
+.tarjeta {
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: white;
+    border-left: 5px solid #28a7c7;
+    border-radius: 6px;
+}
+
+.tarjeta h3 {
+    margin-top: 0;
+    color: #087ea4;
+}
+
+.consejo {
+    margin-bottom: 32px;
+    padding: 16px;
+    background-color: #fff3cd;
+    border: 1px solid #e6c75a;
+    border-radius: 6px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    border: 1px solid #9aa8b5;
+    border-radius: 4px;
+    font: inherit;
+}
+
+button {
+    padding: 10px 18px;
+    background-color: #087ea4;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+}
+
+button:hover {
+    background-color: #065f7d;
+}
+
+footer {
+    padding: 20px;
+    background-color: #123b5d;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: #bdefff;
+}

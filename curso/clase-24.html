@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 24 - Eventos y botones</title>
+    <link rel="stylesheet" href="clase-24.css">
+    <script src="clase-24.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor">
+            <p class="etiqueta">JavaScript desde cero</p>
+            <h1>Eventos y botones</h1>
+            <p>Ejecutar funciones cuando el usuario interactua.</p>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="panel">
+            <h2>Contador de equipos</h2>
+            <p class="contador" id="contador" aria-live="polite">0</p>
+
+            <div class="grupo-botones">
+                <button id="restar" class="boton boton-secundario" type="button">
+                    Restar
+                </button>
+                <button id="reiniciar" class="boton boton-secundario" type="button">
+                    Reiniciar
+                </button>
+                <button id="sumar" class="boton boton-principal" type="button">
+                    Sumar
+                </button>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Estado del servicio</h2>
+            <p id="estado" class="estado" aria-live="polite">
+                Selecciona una opcion.
+            </p>
+
+            <div class="grupo-botones">
+                <button id="marcar-disponible" class="boton boton-correcto" type="button">
+                    Disponible
+                </button>
+                <button id="marcar-pendiente" class="boton boton-advertencia" type="button">
+                    Pendiente
+                </button>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Ultimo evento</h2>
+            <p id="ultimo-evento">Todavia no se presiono un boton.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 24</p>
+        <a href="clase-23.html">Volver a la Clase 23</a>
+    </footer>
+</body>
+</html>

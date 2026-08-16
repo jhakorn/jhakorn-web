@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #edf3f8;
+    color: #243447;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+.encabezado {
+    background-color: #123b5d;
+    color: white;
+}
+
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.marca {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.presentacion {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    min-height: 60vh;
+    padding: 3rem 0;
+}
+
+.presentacion-texto,
+.presentacion img {
+    flex: 1;
+}
+
+.presentacion h1 {
+    margin-top: 0;
+    color: #123b5d;
+    font-size: 2.5rem;
+}
+
+.presentacion img {
+    display: block;
+    max-width: 50%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.boton {
+    display: inline-block;
+    padding: 0.7rem 1.1rem;
+    background-color: #087ea4;
+    color: white;
+    border-radius: 0.4rem;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: #065f7d;
+}
+
+#servicios {
+    padding: 3rem 0;
+}
+
+#servicios h2 {
+    color: #123b5d;
+}
+
+.lista-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.tarjeta {
+    flex: 1 1 250px;
+    padding: 1.5rem;
+    background-color: white;
+    border: 1px solid #cad5df;
+    border-radius: 0.75rem;
+}
+
+.tarjeta h3 {
+    margin-top: 0;
+    color: #087ea4;
+}
+
+.contacto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: #d9eef7;
+    border-radius: 0.75rem;
+}
+
+.contacto h2,
+.contacto p {
+    margin: 0;
+}
+
+footer {
+    padding: 1.5rem;
+    background-color: #123b5d;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: #bdefff;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 25 - Modificar el DOM</title>
+    <link rel="stylesheet" href="clase-25.css">
+    <script src="clase-25.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div class="contenedor">
+            <p class="etiqueta">JavaScript desde cero</p>
+            <h1>Crear y eliminar elementos</h1>
+            <p>Modificar la estructura HTML desde JavaScript.</p>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="panel">
+            <h2>Agregar un servicio</h2>
+
+            <div class="campo">
+                <label for="nuevo-servicio">Nombre del servicio</label>
+                <input
+                    type="text"
+                    id="nuevo-servicio"
+                    placeholder="Ejemplo: Configuracion de router"
+                >
+            </div>
+
+            <button id="agregar" class="boton" type="button">
+                Agregar servicio
+            </button>
+
+            <p id="mensaje" class="mensaje" aria-live="polite">
+                Escribe un servicio y presiona el boton.
+            </p>
+        </section>
+
+        <section class="panel">
+            <div class="titulo-lista">
+                <h2>Lista de servicios</h2>
+                <span id="cantidad" class="cantidad">0 elementos</span>
+            </div>
+
+            <ul id="lista-servicios" class="lista-servicios">
+                <li class="servicio">
+                    <span>Mantenimiento de computadora</span>
+                    <button class="boton-eliminar" type="button">Eliminar</button>
+                </li>
+                <li class="servicio">
+                    <span>Limpieza de impresora</span>
+                    <button class="boton-eliminar" type="button">Eliminar</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 25</p>
+        <a href="clase-24.html">Volver a la Clase 24</a>
+    </footer>
+</body>
+</html>

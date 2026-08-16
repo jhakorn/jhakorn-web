@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios tecnicos de Jhakorn para computadoras e impresoras.">
+    <title>Clase 15 - Componentes visuales</title>
+    <link rel="stylesheet" href="clase-15.css">
+</head>
+<body>
+    <header class="encabezado" id="inicio">
+        <div class="barra">
+            <a class="marca" href="#inicio">Jhakorn</a>
+
+            <nav aria-label="Navegacion principal">
+                <ul class="menu">
+                    <li><a class="menu-enlace activo" href="#inicio">Inicio</a></li>
+                    <li><a class="menu-enlace" href="#servicios">Servicios</a></li>
+                    <li><a class="menu-enlace" href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="presentacion">
+            <div class="presentacion-contenido">
+                <p class="etiqueta">Soporte tecnico confiable</p>
+                <h1>Soluciones para tus equipos</h1>
+                <p class="descripcion">
+                    Diagnostico y mantenimiento para computadoras e impresoras.
+                </p>
+
+                <div class="acciones">
+                    <a class="boton boton-principal" href="#contacto">Solicitar servicio</a>
+                    <a class="boton boton-secundario" href="#servicios">Ver servicios</a>
+                </div>
+            </div>
+
+            <img
+                src="imagen-jhakorn.svg"
+                alt="Computadora que representa el soporte tecnico de Jhakorn"
+                width="800"
+                height="450"
+            >
+        </section>
+
+        <section class="seccion" id="servicios">
+            <div class="seccion-encabezado">
+                <div>
+                    <p class="etiqueta">Lo que hacemos</p>
+                    <h2>Nuestros servicios</h2>
+                </div>
+                <p>Selecciona una categoria para conocer el servicio.</p>
+            </div>
+
+            <div class="rejilla-tarjetas">
+                <article class="tarjeta">
+                    <div class="icono" aria-hidden="true">PC</div>
+                    <h3>Computadoras</h3>
+                    <p>Diagnostico, limpieza y configuracion del sistema.</p>
+                    <a class="tarjeta-enlace" href="#contacto">Consultar servicio</a>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono" aria-hidden="true">PR</div>
+                    <h3>Impresoras</h3>
+                    <p>Mantenimiento y solucion de problemas de impresion.</p>
+                    <a class="tarjeta-enlace" href="#contacto">Consultar servicio</a>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono" aria-hidden="true">SW</div>
+                    <h3>Programas</h3>
+                    <p>Instalacion y configuracion de software autorizado.</p>
+                    <a class="tarjeta-enlace" href="#contacto">Consultar servicio</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <div>
+                <p class="etiqueta">Estamos para ayudarte</p>
+                <h2>Necesitas soporte tecnico</h2>
+                <p>Describe el problema y solicita una evaluacion.</p>
+            </div>
+            <a class="boton boton-principal" href="mailto:contacto@jhakorn.com">Contactar</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 15</p>
+        <a href="clase-14.html">Volver a la Clase 14</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mini proyecto interactivo de servicios tecnicos Jhakorn.">
+    <title>Clase 30 - Proyecto JavaScript</title>
+    <link rel="stylesheet" href="clase-30.css">
+    <script src="clase-30.js" defer></script>
+</head>
+<body>
+    <header class="encabezado" id="inicio">
+        <div class="contenedor barra">
+            <a class="marca" href="#inicio">Jhakorn</a>
+
+            <div class="controles">
+                <button id="boton-tema" class="boton-control" type="button" aria-pressed="false">
+                    Modo oscuro
+                </button>
+                <button id="boton-menu" class="boton-control boton-menu" type="button"
+                    aria-expanded="false" aria-controls="menu-principal">
+                    Abrir menu
+                </button>
+            </div>
+
+            <nav id="menu-principal" class="navegacion" aria-label="Navegacion principal">
+                <ul class="menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#solicitudes">Solicitudes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero contenedor">
+            <div>
+                <p class="etiqueta">Proyecto JavaScript</p>
+                <h1>Servicios tecnicos interactivos</h1>
+                <p>Filtra servicios, cambia el tema y valida una solicitud local.</p>
+                <a class="boton boton-principal" href="#servicios">Explorar servicios</a>
+            </div>
+            <img src="imagen-jhakorn.svg"
+                alt="Computadora que representa los servicios tecnicos de Jhakorn"
+                width="800" height="450">
+        </section>
+
+        <section class="seccion seccion-clara" id="servicios">
+            <div class="contenedor">
+                <p class="etiqueta">Servicios</p>
+                <h2>Selecciona una categoria</h2>
+
+                <div class="filtros" aria-label="Filtros de servicios">
+                    <button class="filtro activo" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+                    <button class="filtro" type="button" data-filtro="computadora" aria-pressed="false">Computadoras</button>
+                    <button class="filtro" type="button" data-filtro="impresora" aria-pressed="false">Impresoras</button>
+                    <button class="filtro" type="button" data-filtro="programas" aria-pressed="false">Programas</button>
+                </div>
+
+                <div class="rejilla" id="rejilla-servicios">
+                    <article class="tarjeta" data-categoria="computadora">
+                        <h3>Diagnostico de computadora</h3>
+                        <p>Revision inicial de hardware y sistema.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="computadora">
+                        <h3>Mantenimiento preventivo</h3>
+                        <p>Limpieza y comprobacion general.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="impresora">
+                        <h3>Limpieza de impresora</h3>
+                        <p>Revision de mecanismos y recorrido del papel.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="impresora">
+                        <h3>Configuracion de impresion</h3>
+                        <p>Conexion local y configuracion basica.</p>
+                    </article>
+                    <article class="tarjeta" data-categoria="programas">
+                        <h3>Instalacion de programas</h3>
+                        <p>Software autorizado y configuracion inicial.</p>
+                    </article>
+                </div>
+                <p id="resultado-filtro" class="resultado" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section class="seccion contenedor" id="contacto">
+            <div class="contacto-rejilla">
+                <div>
+                    <p class="etiqueta">Contacto</p>
+                    <h2>Crear una solicitud local</h2>
+                    <p>Los datos no se envian ni se guardan al recargar.</p>
+                </div>
+
+                <form id="formulario" class="formulario" novalidate>
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text">
+                        <p id="error-nombre" class="error"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="servicio">Servicio</label>
+                        <select id="servicio" name="servicio">
+                            <option value="">Selecciona una opcion</option>
+                            <option value="Computadora">Computadora</option>
+                            <option value="Impresora">Impresora</option>
+                            <option value="Programas">Programas</option>
+                        </select>
+                        <p id="error-servicio" class="error"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="mensaje">Descripcion</label>
+                        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                        <p id="error-mensaje" class="error"></p>
+                    </div>
+                    <button class="boton boton-principal" type="submit">Agregar solicitud</button>
+                    <p id="resultado-formulario" class="resultado" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+        <section class="seccion seccion-clara" id="solicitudes">
+            <div class="contenedor">
+                <div class="titulo-lista">
+                    <h2>Solicitudes de esta visita</h2>
+                    <span id="cantidad-solicitudes" class="contador">0</span>
+                </div>
+                <ul id="lista-solicitudes" class="lista-solicitudes"></ul>
+                <p id="lista-vacia">Todavia no existen solicitudes.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Jhakorn - Clase 30</p>
+        <a href="clase-29.html">Volver a la Clase 29</a>
+    </footer>
+</body>
+</html>
