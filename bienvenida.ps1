@@ -1,0 +1,6 @@
+Write-Host ""
+Write-Host "===================================="
+Write-Host "       BIENVENIDO A JHAKORN"
+Write-Host "===================================="
+Write-Host ""
+Write-Host "Si ves este mensaje, funciona correctamente. actualizado"
