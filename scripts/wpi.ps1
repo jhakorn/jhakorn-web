@@ -1,12 +1,12 @@
 #requires -Version 5.1
 <#
 .SYNOPSIS
-    Fuente de desarrollo del bootstrap publico de WPI JHAKORN v2.2.0.
+    Fuente de desarrollo del bootstrap publico de WPI JHAKORN para la familia v2.2.x.
 
 .NOTES
-    Este archivo no esta publicado. Tras aprobar, firmar y empaquetar el Core
-    v2.2.0, su contenido podra sustituir de forma controlada scripts/wpi.ps1
-    en el repositorio de Cloudflare Pages.
+    Este archivo no esta publicado. Tras aprobar, firmar y empaquetar una
+    version compatible de WPI v2.2.x, su contenido podra sustituir de forma
+    controlada scripts/wpi.ps1 en el repositorio de Cloudflare Pages.
 #>
 [CmdletBinding()]
 param([switch]$LibraryOnly)
@@ -150,13 +150,14 @@ function Get-JhakornExecutionPolicyPlan {
         UserPolicy=$user
         CurrentUser=$CurrentUser
         LocalMachine=$LocalMachine
-        PoliticaHijo='Bypass'
+        PoliticaProceso='Bypass temporal restaurado'
+        ModificaProcesoTemporal=$true
         ModificaCurrentUser=$false
         ModificaLocalMachine=$false
         Mensaje=if ($gpoDefined) {
             "Existe una politica de grupo explicita (MachinePolicy=$machine; UserPolicy=$user). El bootstrap no intentara omitirla. Consulte al administrador."
         } else {
-            'No existe una GPO de ExecutionPolicy; se usara Bypass solamente en el proceso hijo.'
+            'No existe una GPO de ExecutionPolicy; se usara Bypass en Process solo durante la finalizacion y se restaurara despues.'
         }
     }
 }
@@ -167,22 +168,17 @@ function Get-JhakornPrivilegePlan {
     [pscustomobject]@{
         PSTypeName='Wpi.BootstrapPrivilegePlan'
         IsAdministrator=$IsAdministrator
-        UseRunAs=(-not $IsAdministrator)
-        UacRequests=if ($IsAdministrator) { 0 } else { 1 }
-        ContinueInElevatedProcess=$true
+        Permitido=$IsAdministrator
+        DescargaPermitida=$IsAdministrator
+        UseRunAs=$false
+        UacRequests=0
+        ContinueInCurrentProcess=$IsAdministrator
+        Mensaje=if ($IsAdministrator) {
+            'La consola ya esta elevada; el bootstrap continuara en este mismo proceso.'
+        } else {
+            'Abra Windows PowerShell 5.1 como administrador y vuelva a ejecutar: irm jhakorn.com/wpi | iex'
+        }
     }
-}
-
-function Test-JhakornUacCancellation {
-    [CmdletBinding()]
-    param([Parameter(Mandatory = $true)][System.Exception]$Exception)
-    $current = $Exception
-    while ($null -ne $current) {
-        if ($current -is [System.ComponentModel.Win32Exception] -and $current.NativeErrorCode -eq 1223) { return $true }
-        if ($current.HResult -eq -2147023673) { return $true }
-        $current = $current.InnerException
-    }
-    return $false
 }
 
 function Test-JhakornBootstrapCertificate {
@@ -310,62 +306,40 @@ function Assert-JhakornBootstrapMetadata {
     return [pscustomobject]@{ Version=$version; Uri=$downloadUri; Hash=$expectedHash.ToUpperInvariant() }
 }
 
-function ConvertTo-JhakornBootstrapProcessArgument {
-    param([Parameter(Mandatory = $true)][string]$Value)
-    if ($Value.Contains('"')) { throw 'Un argumento de proceso contiene comillas no permitidas.' }
-    return '"' + $Value + '"'
-}
-
-function Invoke-JhakornBootstrapContinuation {
+function Invoke-JhakornBootstrapCompletionInCurrentProcess {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)][string]$ContinuationScript,
         [Parameter(Mandatory = $true)][string]$PackagePath,
         [Parameter(Mandatory = $true)][string]$PackageHash,
-        [Parameter(Mandatory = $true)][string]$Version,
-        [Parameter(Mandatory = $true)][bool]$IsAdministrator
+        [Parameter(Mandatory = $true)][string]$Version
     )
-    $powershellPath = Join-Path $env:WINDIR 'System32\WindowsPowerShell\v1.0\powershell.exe'
-    if (-not (Test-Path -LiteralPath $powershellPath -PathType Leaf)) { throw "No se encontro Windows PowerShell 5.1: $powershellPath" }
-    $arguments = @(
-        '-NoLogo', '-NoProfile', '-ExecutionPolicy', 'Bypass',
-        '-File', (ConvertTo-JhakornBootstrapProcessArgument $ContinuationScript),
-        '-PackagePath', (ConvertTo-JhakornBootstrapProcessArgument $PackagePath),
-        '-ExpectedPackageHash', $PackageHash,
-        '-Version', $Version
-    )
+    if (-not (Test-Path -LiteralPath $ContinuationScript -PathType Leaf)) { throw "No existe el continuador verificado: $ContinuationScript" }
+
+    # El archivo ya esta cubierto por el SHA-256 exterior y por el manifiesto
+    # interior. Bypass se limita al scope Process de esta consola y se restaura
+    # incluso ante error; nunca modifica CurrentUser, LocalMachine ni una GPO.
+    $previousProcessPolicy = Get-ExecutionPolicy -Scope Process
     try {
-        $parameters = @{ FilePath=$powershellPath; ArgumentList=$arguments; PassThru=$true; Wait=$true; ErrorAction='Stop' }
-        if (-not $IsAdministrator) { $parameters.Verb = 'RunAs' }
-        return Start-Process @parameters
+        Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+        . $ContinuationScript -LibraryOnly
+        return Invoke-JhakornBootstrapCompletion -PackagePath $PackagePath -ExpectedPackageHash $PackageHash -Version $Version
     }
-    catch {
-        if (Test-JhakornUacCancellation -Exception $_.Exception) {
-            throw (New-Object System.OperationCanceledException -ArgumentList 'El usuario cancelo la solicitud UAC.', $_.Exception)
-        }
-        throw
+    finally {
+        Set-ExecutionPolicy -Scope Process -ExecutionPolicy $previousProcessPolicy -Force
     }
 }
 
 function Invoke-JhakornPublicBootstrap {
     $workspaceRoot = $null
-    $rootInitiallyTrusted = $false
-    $publisherInitiallyTrusted = $false
-    try {
-        Write-Host ''
-        Write-Host '========================================='
-        Write-Host '       WPI JHAKORN - INICIANDO'
-        Write-Host '========================================='
-        Write-Host ''
+    $privilegePlan = Get-JhakornPrivilegePlan -IsAdministrator (Test-JhakornBootstrapAdministrator)
+    if (-not $privilegePlan.Permitido) {
+        Write-Warning $privilegePlan.Mensaje
+        return
+    }
 
-        $isAdministrator = Test-JhakornBootstrapAdministrator
-        if ($isAdministrator) {
-            Write-Host 'Privilegios actuales: Administrador'
-        } else {
-            Write-Host 'Privilegios actuales: Usuario estandar'
-            Write-Host 'WPI necesitara permisos de administrador.'
-            Write-Host 'Windows mostrara una solicitud UAC durante el proceso.'
-        }
+    try {
+        Write-Host 'Iniciando WPI JHAKORN...'
 
         $policyList = @(Get-ExecutionPolicy -List)
         $policyByScope = @{}
@@ -373,85 +347,35 @@ function Invoke-JhakornPublicBootstrap {
         $policyPlan = Get-JhakornExecutionPolicyPlan -MachinePolicy $policyByScope['MachinePolicy'] -UserPolicy $policyByScope['UserPolicy'] -CurrentUser $policyByScope['CurrentUser'] -LocalMachine $policyByScope['LocalMachine']
         if (-not $policyPlan.Permitido) { throw $policyPlan.Mensaje }
 
-        Write-Host '[1/8] Consultando version actual...'
         $metadata = Invoke-RestMethod -Uri $script:MetaUrl
         $validatedMetadata = Assert-JhakornBootstrapMetadata -Metadata $metadata
-        Write-Host "      Version: $($validatedMetadata.Version)"
 
-        Write-Host '[2/8] Preparando zona provisional controlada...'
         if ([string]::IsNullOrWhiteSpace($env:ProgramData)) { throw 'ProgramData no esta disponible.' }
         $workspace = New-JhakornBootstrapWorkspace -Version $validatedMetadata.Version -ProgramDataPath $env:ProgramData
         $workspaceRoot = $workspace.Ruta
         $zipPath = Join-Path $workspaceRoot 'WPI-JHAKORN.zip'
         $extractPath = Join-Path $workspaceRoot 'Verificacion'
-        Write-Host "      Ruta: $workspaceRoot"
 
-        Write-Host '[3/8] Descargando WPI...'
         Invoke-WebRequest -Uri $validatedMetadata.Uri.AbsoluteUri -OutFile $zipPath
 
-        Write-Host '[4/8] Verificando integridad del paquete...'
         $actualZipHash = (Get-FileHash -LiteralPath $zipPath -Algorithm SHA256).Hash.ToUpperInvariant()
         if ($actualZipHash -ne $validatedMetadata.Hash) { throw "SHA256 del paquete incorrecto. Esperado=$($validatedMetadata.Hash); obtenido=$actualZipHash." }
-        Write-Host '      SHA256 del ZIP: OK'
 
-        Write-Host '[5/8] Extrayendo WPI en zona provisional...'
         [void](New-Item -ItemType Directory -Path $extractPath -ErrorAction Stop)
         Expand-JhakornBootstrapArchive -ArchivePath $zipPath -DestinationPath $extractPath
 
-        Write-Host '[6/8] Verificando archivos internos...'
-        $manifestEntries = Assert-JhakornBootstrapManifest -Root $extractPath
-        Write-Host "      Archivos verificados: $manifestEntries"
+        [void](Assert-JhakornBootstrapManifest -Root $extractPath)
         $continuationScript = Join-Path $extractPath 'Bootstrap\Completar-Bootstrap-JHAKORN.ps1'
         if (-not (Test-Path -LiteralPath $continuationScript -PathType Leaf)) {
-            throw 'El paquete no contiene Bootstrap\Completar-Bootstrap-JHAKORN.ps1; se requiere un Core v2.2.0 compatible.'
+            throw 'El paquete no contiene Bootstrap\Completar-Bootstrap-JHAKORN.ps1; se requiere un Core v2.2.1 compatible.'
         }
 
-        Write-Host '[7/8] Preparando contexto de confianza y Core estable...'
-        $rootInitiallyTrusted = Test-JhakornBootstrapCertificate -StoreName 'Root' -Thumbprint $script:ExpectedRootThumbprint
-        $publisherInitiallyTrusted = Test-JhakornBootstrapCertificate -StoreName 'TrustedPublisher' -Thumbprint $script:ExpectedPublisherThumbprint
-        if ($isAdministrator) {
-            Write-Host '      Se continuara como Administrador sin una segunda solicitud UAC.'
-        } else {
-            Write-Host '      Se solicitara una unica elevacion UAC.'
-        }
-
-        Write-Host '[8/8] Promoviendo, verificando y abriendo WPI JHAKORN...'
-        $continuation = Invoke-JhakornBootstrapContinuation -ContinuationScript $continuationScript -PackagePath $zipPath -PackageHash $validatedMetadata.Hash -Version $validatedMetadata.Version -IsAdministrator $isAdministrator
-        if ($continuation.ExitCode -ne 0) {
-            $meaning = switch ($continuation.ExitCode) {
-                41 { 'fallo al promover o verificar el Core estable' }
-                42 { 'fallo al preparar o verificar la confianza JHAKORN' }
-                43 { 'fallo al verificar firmas Authenticode' }
-                44 { 'fallo al iniciar o ejecutar WPI' }
-                default { 'fallo no clasificado en la continuacion elevada' }
-            }
-            throw "La continuacion finalizo con codigo $($continuation.ExitCode): $meaning."
-        }
-    }
-    catch [System.OperationCanceledException] {
-        Write-Host ''
-        Write-Host '========================================='
-        Write-Host ' WPI JHAKORN - OPERACION CANCELADA'
-        Write-Host '========================================='
-        Write-Host ''
-        Write-Host 'El usuario cancelo la solicitud de permisos de administrador.'
-        Write-Host 'No se continuo con la operacion.'
-        if ($rootInitiallyTrusted -and $publisherInitiallyTrusted) {
-            Write-Host 'La confianza JHAKORN permanece instalada correctamente.'
-        } else {
-            Write-Host 'No se instalaron certificados desde esta ejecucion.'
-        }
-        return
+        $completion = Invoke-JhakornBootstrapCompletionInCurrentProcess -ContinuationScript $continuationScript -PackagePath $zipPath -PackageHash $validatedMetadata.Hash -Version $validatedMetadata.Version
+        if ($null -eq $completion -or -not $completion.Iniciado) { throw 'El continuador no confirmo el inicio independiente de WPI.' }
+        Write-Host 'WPI JHAKORN iniciado correctamente.'
     }
     catch {
-        Write-Host ''
-        Write-Host '========================================='
-        Write-Host '          WPI JHAKORN - ERROR'
-        Write-Host '========================================='
-        Write-Host ''
-        Write-Host $_.Exception.Message
-        Write-Host ''
-        throw
+        throw "WPI JHAKORN no pudo iniciarse: $($_.Exception.Message)"
     }
     finally {
         if ($null -ne $workspaceRoot -and (Test-Path -LiteralPath $workspaceRoot)) {
