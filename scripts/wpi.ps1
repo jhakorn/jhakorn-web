@@ -320,10 +320,16 @@ function Invoke-JhakornBootstrapCompletionInCurrentProcess {
     # interior. Bypass se limita al scope Process de esta consola y se restaura
     # incluso ante error; nunca modifica CurrentUser, LocalMachine ni una GPO.
     $previousProcessPolicy = Get-ExecutionPolicy -Scope Process
+    # Un script cargado con dot-source comparte este scope. Conservar las
+    # entradas con nombres internos evita que sus parametros de script
+    # (PackagePath, PackageHash o Version) sustituyan estos valores.
+    $__jhakornCompletionPackagePath = $PackagePath
+    $__jhakornCompletionPackageHash = $PackageHash
+    $__jhakornCompletionVersion = $Version
     try {
         Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
         . $ContinuationScript -LibraryOnly
-        return Invoke-JhakornBootstrapCompletion -PackagePath $PackagePath -ExpectedPackageHash $PackageHash -Version $Version
+        return Invoke-JhakornBootstrapCompletion -PackagePath $__jhakornCompletionPackagePath -ExpectedPackageHash $__jhakornCompletionPackageHash -Version $__jhakornCompletionVersion
     }
     finally {
         Set-ExecutionPolicy -Scope Process -ExecutionPolicy $previousProcessPolicy -Force
