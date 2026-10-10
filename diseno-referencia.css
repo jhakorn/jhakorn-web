@@ -394,3 +394,19 @@
 .web-v2 .encabezado .menu a[aria-current="page"],.web-v2 .encabezado .menu a[href="#inicio"]{color:#12e1f5;border-bottom:2px solid #12e1f5;border-radius:0}
 .web-v2 .encabezado .boton-icono{border-color:#169fc4}
 @media(max-width:759px){.web-v2 .encabezado .barra{flex-wrap:wrap}.web-v2 .encabezado .marca{margin-right:auto!important}.web-v2 .encabezado .controles{order:initial}.web-v2 .encabezado .navegacion{margin-left:0!important}}
+
+
+/* Entrega 10 — portada de menor carga visual, aprobada por usuario. */
+.web-v2 .v2-ps-icon{width:33px!important;height:33px!important;flex:0 0 33px!important;font-size:1.03rem!important;border-radius:6px!important}
+.web-v2 .v2-command{padding:9px 12px!important;gap:11px!important}
+.web-v2 .v2-command button{width:35px!important;height:35px!important;font-size:1.16rem!important}
+.web-v2 .v2-command-label{font-size:.73rem!important;margin-bottom:3px!important}
+.web-v2 .v2-doclink{display:flex;justify-content:flex-start;margin-top:9px;margin-bottom:2px}
+.web-v2 .v2-doclink a{color:#a9dbf4;text-decoration:none;font-size:.82rem;font-weight:650;padding:6px 2px}
+.web-v2 .v2-doclink a span{color:#15d0fa;margin-left:5px}
+.web-v2 .v2-doclink a:hover{color:#67e8f9;text-decoration:underline;text-underline-offset:4px}
+.web-v2 .v2-doclink a:focus-visible{outline:2px solid #67e8f9;outline-offset:3px}
+.web-v2 .v2-featurecards a{min-height:111px!important;align-items:center!important;padding:12px 14px!important}
+.web-v2 .v2-featurecards a>span:nth-child(2){gap:5px!important}
+.web-v2 .v2-featurecards small{font-size:.81rem!important;line-height:1.36!important}
+@media(max-width:680px){.web-v2 .v2-command code{font-size:clamp(.66rem,2.4vw,.89rem)!important}}
