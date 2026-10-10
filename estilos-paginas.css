@@ -21,3 +21,51 @@
 .fila-acciones .boton-secundario{border-color:var(--acento);color:var(--texto)}
 .pagina footer{margin-top:1rem}
 @media(max-width:759px){.pagina .controles{margin-left:auto}}
+
+
+/* Landing v2 - conserva el logotipo y los tokens de marca */
+.web-v2 .hero-v2{background:radial-gradient(circle at 85% 20%,#07536b 0%,transparent 34%),linear-gradient(135deg,#04121d,#071b2b 58%,#123b5d);padding-bottom:3rem}
+.web-v2 .hero-v2 .hero-rejilla{grid-template-columns:minmax(0,1fr);min-height:auto;padding-block:clamp(3rem,6vw,5.5rem);gap:2rem}
+.web-v2 .hero-v2 h1{font-size:clamp(2.7rem,5vw,5.4rem);line-height:1.02}
+.web-v2 .hero-v2 h1 span{color:#67e8f9}
+.web-v2 .hero-cuidado{color:#b9d2de;font-size:.88rem}
+.web-v2 .consola-home{margin-top:1.5rem;max-width:660px}
+.web-v2 .hero-servicios{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.web-v2 .hero-servicios a{position:relative;display:grid;align-content:start;gap:.65rem;border:1px solid #245070;background:linear-gradient(140deg,#0a1d30,#102f4a);border-radius:1rem;padding:1.4rem;text-decoration:none;min-height:155px;transition:border-color .2s,transform .2s}
+.web-v2 .hero-servicios a:hover{border-color:#67e8f9;transform:translateY(-3px)}
+.web-v2 .hero-servicios strong{color:#fff;font-size:1.12rem}
+.web-v2 .hero-servicios span{color:#b9d2de}
+.web-v2 .hero-servicios b{position:absolute;right:1.1rem;top:1.1rem;color:#67e8f9}
+.producto-marco{width:100%;min-width:0;border:1px solid #3e97b4;border-radius:1rem;background:#0c1729;box-shadow:0 0 32px rgb(8 145 178 / 23%);overflow:hidden;color:#d9eff7}
+.producto-superior{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.2rem;background:#101f35;font-size:.87rem}
+.producto-superior span:first-child{font-weight:800;color:#67e8f9}
+.producto-pestanas{display:flex;gap:.5rem;padding:.7rem 1rem;border-bottom:1px solid #294454;font-size:.78rem}
+.producto-pestanas>*{padding:.5rem .7rem}
+.producto-pestanas strong{background:#154779;border:1px solid #337bb8;border-radius:.35rem}
+.producto-cuerpo{display:grid;grid-template-columns:145px minmax(0,1fr);min-height:290px}
+.producto-menu{display:flex;flex-direction:column;gap:.55rem;padding:1rem .6rem;background:#0a1425;border-right:1px solid #21354d;font-size:.76rem}
+.producto-menu small{color:#92b7d6;font-size:.64rem}
+.producto-menu b{padding:.6rem;background:#162b45;border-radius:.35rem}
+.producto-menu span{padding:.35rem .6rem}
+.producto-menu .activo{background:#184b80;border-radius:.35rem}
+.producto-lista{padding:1rem;min-width:0}
+.producto-lista h3{font-size:1.1rem;margin:1.1rem 0}
+.producto-search{padding:.6rem;background:#172940;border:1px solid #294454;border-radius:.4rem;font-size:.8rem;color:#89a9c3}
+.producto-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.producto-cards span{padding:1rem .5rem;border:1px solid #203953;background:#112136;border-radius:.5rem;font-weight:700;font-size:.78rem}
+.producto-foot{padding:.75rem 1rem;border-top:1px solid #294454;color:#a7c9dc;font-size:.72rem}
+.sidebar-toggle{position:fixed;left:1rem;top:88px;z-index:80;background:#123b5d;color:#fff;border:1px solid #67e8f9;border-radius:.6rem;padding:.65rem .85rem;cursor:pointer;box-shadow:0 8px 25px #0006}
+.sidebar-jhakorn{position:fixed;z-index:91;top:76px;bottom:0;left:0;width:min(310px,88vw);overflow-y:auto;background:linear-gradient(155deg,#0a1b2d,#0b2943);color:#fff;border-right:1px solid #3d8fab;padding:1rem;box-shadow:12px 0 35px #0007;transform:translateX(-105%);transition:transform .22s}
+.sidebar-jhakorn.abierta{transform:translateX(0)}
+.sidebar-heading{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #345069;padding-bottom:1rem}
+.sidebar-heading button{color:#fff;background:transparent;border:1px solid #42657c;border-radius:.5rem;padding:.3rem .7rem;cursor:pointer;font-size:1.5rem}
+.sidebar-jhakorn nav{display:grid;gap:.35rem;margin-top:1rem}
+.sidebar-jhakorn a,.sidebar-jhakorn summary{display:block;color:#e6f4ff;text-decoration:none;padding:.7rem;border-radius:.45rem;cursor:pointer}
+.sidebar-jhakorn a:hover,.sidebar-jhakorn summary:hover{background:#194365}
+.sidebar-jhakorn details a{padding-left:1.55rem;color:#beddeb;font-size:.92rem}
+.sidebar-jhakorn a[aria-current=page]{background:#174d7c;color:#67e8f9}
+.sidebar-foot{color:#9ebdd0;font-size:.79rem;border-top:1px solid #294454;padding-top:1rem}
+.sidebar-shade{position:fixed;inset:76px 0 0;z-index:90;background:#0009}
+.sidebar-shade[hidden]{display:none}
+@media(min-width:960px){.web-v2 .hero-v2 .hero-rejilla{grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr)}}
+@media(max-width:560px){.producto-cuerpo{grid-template-columns:105px minmax(0,1fr)}.producto-menu{font-size:.65rem}.producto-cards{grid-template-columns:1fr}.producto-superior{font-size:.72rem}.sidebar-toggle span{display:none}.web-v2 .hero-v2 h1{font-size:clamp(2.2rem,10vw,3.5rem)}}
