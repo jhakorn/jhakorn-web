@@ -179,3 +179,43 @@
 .pagina .encabezado{background:#031126}
 .pagina .encabezado .barra{min-height:72px}
 @media(max-width:600px){.pagina .pagina-hero{padding:27px 0 29px}.pagina .pagina-hero .marca-hero{width:38px;height:38px}}
+
+
+/* Entrega 04: sistema visual integral JHAKORN. Elimina discontinuidades entre hero y secciones. */
+:root{--jv-navy:#031126;--jv-panel:#071b34;--jv-panel2:#0a2a4a;--jv-line:#15517f;--jv-cyan:#08d8f9;--jv-soft:#bad4ed}
+.web-v2,.pagina{background:#031126}
+.web-v2 main,.pagina main{background:linear-gradient(130deg,#031126,#071b34 60%,#032143)}
+.web-v2 main>.seccion,.web-v2 main>.seccion-oscura,.web-v2 main>.contacto,.pagina main>.seccion{position:relative;isolation:isolate;background:radial-gradient(ellipse at 90% 0%,rgba(4,111,215,.19),transparent 55%),linear-gradient(125deg,#031126,#061f3d 70%,#052949)!important;color:#e9f4ff;border-top:1px solid #0b3a66}
+.web-v2 main>.seccion::before,.web-v2 main>.seccion-oscura::before,.web-v2 main>.contacto::before,.pagina main>.seccion::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0 138px,rgba(9,126,203,.055) 139px 140px,transparent 141px 280px)}
+.web-v2 main>.seccion h2,.web-v2 main>.seccion-oscura h2,.web-v2 main>.contacto h2,.pagina main>.seccion h2{color:#f5faff}
+.web-v2 main>.seccion p,.web-v2 main>.seccion-oscura p,.web-v2 main>.contacto p{color:#bed4ed}
+.web-v2 .tarjeta,.web-v2 .pasos li,.web-v2 .formulario,.pagina .enlaces-lista article{background:linear-gradient(142deg,rgba(10,37,68,.95),rgba(5,26,51,.97))!important;border:1px solid #155582!important;border-radius:14px;box-shadow:0 0 0 1px rgba(3,140,222,.12),0 15px 30px #0004;transition:border-color .2s,box-shadow .2s,transform .2s}
+.web-v2 .tarjeta:hover,.pagina .enlaces-lista article:hover{border-color:#13c6fa!important;box-shadow:0 0 23px rgba(0,154,242,.25),0 14px 29px #0005;transform:translateY(-2px)}
+.web-v2 .tarjeta h3,.web-v2 .pasos h3,.web-v2 .formulario label{color:#f1faff}
+.web-v2 .tarjeta p,.web-v2 .pasos p{color:#b9d4ee}
+.web-v2 .tarjeta .codigo{color:#20d7fc}
+.web-v2 .lista-verificacion li,.web-v2 .datos-rapidos li,.web-v2 .datos-contacto,.web-v2 .datos-contacto a{color:#c6dcf2}
+.web-v2 .perfil-marca{background:radial-gradient(circle,#0c4670,#061730 70%);border:1px solid #145785;border-radius:18px;box-shadow:0 0 30px #067dce24}
+.web-v2 .campo input,.web-v2 .campo textarea,.web-v2 .campo select{background:#071e37;color:#f1faff;border:1px solid #27618b}
+.web-v2 .campo input:focus,.web-v2 .campo textarea:focus,.web-v2 .campo select:focus{outline:2px solid #67e8f9;outline-offset:1px}
+.web-v2 .whatsapp{box-shadow:0 4px 20px #051a2d99}
+.pagina .seccion{background:radial-gradient(ellipse at 88% 3%,rgba(7,113,209,.18),transparent 50%),linear-gradient(120deg,#031127,#092345 78%,#073351)!important}
+.pagina .pagina-hero{background:radial-gradient(ellipse at 90% 25%,rgba(1,130,230,.31),transparent 51%),linear-gradient(120deg,#031126,#082b51 75%,#073858)!important}
+.pagina .enlaces-lista article{background:linear-gradient(140deg,#0a2747,#071e38)!important}
+.pagina footer,.web-v2 footer{background:#031126;color:#b2d4eb;border-top:1px solid #15456c}
+/* Sidebar: misma posición, estética del mockup de referencia. */
+.web-v2 .sidebar-jhakorn{width:min(310px,88vw);top:76px;bottom:0;padding:16px 13px;background:radial-gradient(ellipse at 8% 0%,rgba(5,129,224,.2),transparent 63%),linear-gradient(165deg,#04152e,#052348 66%,#061a34);border:1px solid #0f9edd;border-left:2px solid #0bb7ed;border-radius:0 14px 14px 0;box-shadow:0 0 16px rgba(0,166,255,.42),15px 0 44px #0009;transition:transform .23s ease;z-index:91}
+.web-v2 .sidebar-heading{font-size:.98rem;color:#f1faff;border-bottom:1px solid #1a5783;padding:2px 5px 15px}
+.web-v2 .sidebar-heading button{color:#c2f7ff;border-color:#107dba;background:#0b3056;box-shadow:0 0 10px #068de34d}
+.web-v2 .sidebar-jhakorn nav{gap:5px}
+.web-v2 .sidebar-jhakorn a,.web-v2 .sidebar-jhakorn summary{font-size:.94rem;color:#d9edff;padding:11px 13px;line-height:1.4;border:1px solid transparent;transition:background .16s,color .16s,border-color .16s}
+.web-v2 .sidebar-jhakorn a:hover,.web-v2 .sidebar-jhakorn summary:hover{background:linear-gradient(90deg,#103e70,#0b2d56);border-color:#128ac4;color:white}
+.web-v2 .sidebar-jhakorn a[aria-current="page"]{background:linear-gradient(95deg,#064c8d,#0964a3);border-color:#06b9f4;color:#edffff;font-weight:700;box-shadow:inset 0 0 16px #0098ec55,0 0 12px #069fff29}
+.web-v2 .sidebar-jhakorn details{border-bottom:1px solid #113e67;padding-bottom:7px;margin-bottom:6px}
+.web-v2 .sidebar-jhakorn details[open]>summary{color:#67e8f9;font-weight:700}
+.web-v2 .sidebar-jhakorn details a{margin-left:12px;font-size:.87rem;color:#b4d6f1;padding:9px 9px 9px 18px;position:relative}
+.web-v2 .sidebar-jhakorn details a::before{content:"";position:absolute;left:5px;top:18px;width:5px;height:5px;background:#14a8e8;border-radius:50%;box-shadow:0 0 9px #09dcff}
+.web-v2 .sidebar-foot{color:#96bfdd;border-color:#1c5178;padding:13px 8px}
+.web-v2 .sidebar-shade{background:rgba(0,8,22,.66);backdrop-filter:blur(2px)}
+.web-v2 .sidebar-toggle:focus-visible,.web-v2 .sidebar-jhakorn button:focus-visible,.web-v2 .sidebar-jhakorn a:focus-visible,.web-v2 .sidebar-jhakorn summary:focus-visible{outline:2px solid #67e8f9;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.web-v2 .sidebar-jhakorn,.web-v2 .tarjeta,.pagina .enlaces-lista article{transition:none}}
