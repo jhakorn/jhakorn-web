@@ -410,3 +410,43 @@
 .web-v2 .v2-featurecards a>span:nth-child(2){gap:5px!important}
 .web-v2 .v2-featurecards small{font-size:.81rem!important;line-height:1.36!important}
 @media(max-width:680px){.web-v2 .v2-command code{font-size:clamp(.66rem,2.4vw,.89rem)!important}}
+
+
+/* Entrega 11 — recurso SVG optimizado, fondo continuo sin duplicaciones.
+   La textura se conserva; los textos y los controles son elementos reales.
+   Restaurar contraste y evitar overlays anteriores que tapen el dibujo. */
+.web-v2 .v2-stage{
+ background-image:linear-gradient(90deg,rgba(2,11,25,.56) 0%,rgba(3,18,38,.22) 45%,rgba(2,11,25,.12) 100%),url("/assets/fondo-jhakorn-v2.svg")!important;
+ background-color:#031126!important;background-repeat:no-repeat!important;
+ background-position:center top!important;background-size:cover!important;
+}
+.web-v2 .v2-stage::before,.web-v2 .v2-stage::after,.web-v2 .v2-mesh{display:none!important;content:none!important}
+.web-v2 .v2-window-position::after{display:none!important;content:none!important}
+.web-v2 .v2-window-position::before{
+ background:radial-gradient(ellipse at center,rgba(0,134,245,.23),transparent 70%)!important;
+ filter:blur(29px)!important;box-shadow:none!important;inset:-10% -9%!important;
+}
+.web-v2 .v2-window{box-shadow:0 0 17px rgba(0,202,255,.5),0 0 39px rgba(0,107,222,.20),17px 22px 48px rgba(0,4,14,.76)!important}
+/* Las páginas internas usan el mismo recurso pero encuadres distintos,
+   con una capa oscura uniforme delante de la imagen para el texto. */
+.pagina .pagina-hero{
+ background-color:#031126!important;
+ background-image:linear-gradient(90deg,rgba(2,11,27,.83),rgba(2,15,36,.56)),url("/assets/fondo-jhakorn-v2.svg")!important;
+ background-repeat:no-repeat!important;background-size:cover!important;
+}
+.pagina .pagina-hero::before,.pagina .pagina-hero::after{display:none!important;content:none!important}
+.pagina:has(a[href="/tech/"][aria-current="page"]) .pagina-hero{background-position:center 34%!important}
+.pagina:has(a[href="/servicios/"][aria-current="page"]) .pagina-hero{background-position:center 52%!important}
+.pagina:has(a[href="/proyectos/"][aria-current="page"]) .pagina-hero{background-position:center 67%!important}
+.pagina:has(a[href="/documentacion/"][aria-current="page"]) .pagina-hero{background-position:center 81%!important}
+.pagina:has(a[href="/contacto/"][aria-current="page"]) .pagina-hero{background-position:center 96%!important}
+/* Continuidad del ambiente en el resto del documento sin repetir imágenes grandes. */
+.web-v2 main>.seccion,.web-v2 main>.seccion-oscura,.web-v2 main>.contacto,.pagina main>.seccion{
+ background:radial-gradient(ellipse at 85% 0%,rgba(0,103,201,.15),transparent 65%),linear-gradient(125deg,#031126,#06203f 75%,#052b4a)!important;
+}
+.web-v2 main>.seccion::before,.web-v2 main>.seccion-oscura::before,.web-v2 main>.contacto::before,.pagina main>.seccion::before{opacity:.32!important}
+@media(max-width:680px){
+ .web-v2 .v2-stage{background-position:59% top!important}
+ .pagina .pagina-hero{background-position:60% center!important}
+ .web-v2 .v2-window-position::before{opacity:.42!important}
+}
