@@ -219,3 +219,88 @@
 .web-v2 .sidebar-shade{background:rgba(0,8,22,.66);backdrop-filter:blur(2px)}
 .web-v2 .sidebar-toggle:focus-visible,.web-v2 .sidebar-jhakorn button:focus-visible,.web-v2 .sidebar-jhakorn a:focus-visible,.web-v2 .sidebar-jhakorn summary:focus-visible{outline:2px solid #67e8f9;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){.web-v2 .sidebar-jhakorn,.web-v2 .tarjeta,.pagina .enlaces-lista article{transition:none}}
+
+
+/* Entrega 05 — atmósfera y halo JHAKORN en el sitio completo.
+   Capas CSS ligeras, decorativas y sin captura de eventos. */
+.web-v2 .v2-stage{
+ background:
+ radial-gradient(ellipse 53% 70% at 82% 41%,rgba(6,125,253,.35),transparent 76%),
+ radial-gradient(ellipse 37% 58% at 99% 52%,rgba(2,195,255,.22),transparent 82%),
+ linear-gradient(110deg,#020b1b 4%,#04152e 49%,#082950 100%)!important;
+}
+.web-v2 .v2-stage::before{
+ background:
+ linear-gradient(90deg,transparent 36%,rgba(0,120,255,.065) 45%,transparent 54%),
+ repeating-linear-gradient(90deg,transparent 0 145px,rgba(33,157,226,.04) 146px,transparent 147px 292px),
+ repeating-linear-gradient(0deg,transparent 0 130px,rgba(20,130,217,.035) 131px,transparent 132px 260px)!important;
+}
+.web-v2 .v2-mesh{
+ inset:-15% -5% -12% 30%;clip-path:none;opacity:.95;
+ background:
+ linear-gradient(149deg,transparent 0 22%,rgba(8,148,243,.13) 22.08%,transparent 22.4%),
+ linear-gradient(26deg,transparent 0 45%,rgba(3,128,239,.17) 45.08%,transparent 45.4%),
+ repeating-linear-gradient(135deg,transparent 0 138px,rgba(9,121,210,.13) 139px,transparent 141px 276px),
+ repeating-linear-gradient(45deg,transparent 0 138px,rgba(5,86,177,.10) 139px,transparent 141px 276px);
+ filter:drop-shadow(0 0 18px #057ccc5e);
+}
+/* Resplandor exterior que expande la luz del WPI hacia el fondo. */
+.web-v2 .v2-window-position{position:relative;isolation:isolate}
+.web-v2 .v2-window-position::before{
+ content:"";position:absolute;inset:-15% -13%;z-index:-2;pointer-events:none;
+ background:
+ radial-gradient(ellipse at 55% 45%,rgba(0,180,255,.27),rgba(0,85,255,.12) 42%,transparent 71%),
+ conic-gradient(from 200deg at 57% 48%,transparent 0deg,rgba(0,150,255,.15) 60deg,transparent 105deg,rgba(0,120,225,.13) 180deg,transparent 230deg);
+ filter:blur(27px);
+}
+.web-v2 .v2-window-position::after{
+ content:"";position:absolute;inset:-6% -3%;z-index:-1;pointer-events:none;
+ border:1px solid rgba(35,169,255,.20);border-radius:30px;
+ box-shadow:0 0 42px rgba(0,117,251,.25),inset 0 0 28px rgba(0,137,235,.08);
+ transform:rotate(-1.7deg) scale(1.015);
+}
+.web-v2 .v2-window{
+ border-color:#34caff!important;
+ box-shadow:0 0 0 2px #075582,0 0 21px rgba(1,208,255,.72),
+ 0 0 68px rgba(0,114,255,.50),17px 21px 46px #000b!important;
+}
+/* Fondo unificado para la totalidad de secciones y páginas, no solo héroes. */
+.web-v2 main,.pagina main{
+ background:
+ radial-gradient(ellipse at 85% 8%,rgba(0,110,231,.14),transparent 62%),
+ linear-gradient(118deg,#020c1d,#071d39 72%,#06294b)!important;
+}
+.web-v2 main>.seccion,.web-v2 main>.seccion-oscura,.web-v2 main>.contacto,.pagina main>.seccion{
+ background:
+ radial-gradient(ellipse at 88% 24%,rgba(0,112,237,.20),transparent 60%),
+ linear-gradient(120deg,#021020,#061d3b 69%,#072d50)!important;
+}
+.web-v2 main>.seccion::before,.web-v2 main>.seccion-oscura::before,.web-v2 main>.contacto::before,.pagina main>.seccion::before{
+ background:
+ repeating-linear-gradient(135deg,transparent 0 128px,rgba(14,117,213,.072) 129px,transparent 131px 258px),
+ repeating-linear-gradient(45deg,transparent 0 160px,rgba(12,109,206,.045) 161px,transparent 163px 322px)!important;
+}
+.pagina .pagina-hero{
+ background:
+ radial-gradient(ellipse at 82% 45%,rgba(0,138,244,.30),transparent 64%),
+ linear-gradient(110deg,#020d1f,#062447 70%,#06395f)!important;
+}
+.pagina .pagina-hero::after{
+ background:
+ repeating-linear-gradient(135deg,transparent 0 116px,rgba(0,140,237,.14) 117px,transparent 119px 234px),
+ repeating-linear-gradient(45deg,transparent 0 168px,rgba(5,99,191,.08) 169px,transparent 171px 338px)!important;
+ opacity:.75;
+}
+.web-v2 .sidebar-jhakorn{
+ box-shadow:0 0 16px rgba(0,166,255,.52),15px 0 55px #000b;
+}
+/* Mantener una densidad visual baja en pantallas pequeñas. */
+@media(max-width:680px){
+ .web-v2 .v2-window-position::before{inset:-8% -6%;filter:blur(19px);opacity:.55}
+ .web-v2 .v2-window-position::after{display:none}
+ .web-v2 .v2-mesh{opacity:.37}
+ .pagina .pagina-hero::after{opacity:.3}
+}
+@media(prefers-reduced-motion:reduce){
+ .web-v2 .v2-window-position::before,.web-v2 .v2-window-position::after{animation:none}
+}
