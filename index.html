@@ -9,9 +9,11 @@
     <link rel="canonical" href="https://jhakorn.com/">
     <link rel="icon" href="logo-jhakorn.svg" type="image/svg+xml">
     <link rel="stylesheet" href="jhakorn-proyecto.css">
+    <link rel="stylesheet" href="/estilos-paginas.css">
     <script src="jhakorn-proyecto.js" defer></script>
+    <script src="/scripts/sidebar.js" defer></script>
 </head>
-<body>
+<body class="web-v2">
     <a class="saltar" href="#contenido">Saltar al contenido</a>
     <header class="encabezado" id="inicio">
         <div class="contenedor barra">
@@ -20,17 +22,38 @@
             <nav id="menu-principal" class="navegacion" aria-label="Navegación principal"><ul class="menu"><li><a href="#inicio">Inicio</a></li><li><a href="/tech/">JHAKORN Tech</a></li><li><a href="/servicios/">Servicios</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/documentacion/">Documentación</a></li><li><a href="/contacto/">Contacto</a></li></ul></nav>
         </div>
     </header>
+    <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-controls="sidebar-jhakorn" aria-expanded="false">☰ <span>Explorar JHAKORN</span></button>
+    <aside id="sidebar-jhakorn" class="sidebar-jhakorn" aria-label="Explorar JHAKORN">
+      <div class="sidebar-heading"><strong>Explorar JHAKORN</strong><button id="sidebar-close" type="button" aria-label="Cerrar panel">×</button></div>
+      <nav aria-label="Navegación secundaria"><a href="/" aria-current="page">⌂ &nbsp; Inicio</a>
+      <details open><summary>JHAKORN Tech</summary><a href="/tech/">Centro de Control</a><a href="/tech/#herramientas">Herramientas técnicas</a><a href="/tech/#comando">Comando PowerShell</a></details>
+      <details><summary>Servicios profesionales</summary><a href="/servicios/">Todos los servicios</a><a href="/servicios/#empaquetados">Empaquetados personalizados</a><a href="/servicios/#scripts">Scripts personalizados</a></details>
+      <a href="/proyectos/">◇ &nbsp; Proyectos y laboratorio</a><a href="/documentacion/">▤ &nbsp; Documentación técnica</a><a href="/contacto/">✉ &nbsp; Contacto</a></nav>
+      <p class="sidebar-foot">Ingeniería, software y soporte técnico.</p>
+    </aside><div class="sidebar-shade" id="sidebar-shade" hidden></div>
     <main id="contenido">
-        <section class="hero">
-            <div class="contenedor hero-rejilla">
-                <div class="hero-contenido">
-                    <p class="etiqueta">Ingeniería electrónica y soporte técnico</p><h1>Tecnología que vuelve a funcionar</h1>
-                    <p class="hero-texto">Diagnóstico, mantenimiento y soluciones claras para computadoras, impresoras, redes y sistemas electrónicos en Cochabamba.</p>
-                    <div class="acciones"><a class="boton boton-principal" href="https://wa.me/59177908460" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="boton boton-secundario" href="#servicios">Ver servicios</a></div>
-                    <ul class="datos-rapidos" aria-label="Información principal"><li><strong>Cochabamba</strong><span>Bolivia</span></li><li><strong>17:00 - 22:00</strong><span>Horario de atención</span></li><li><strong>Presencial y remoto</strong><span>También a domicilio</span></li></ul>
-                </div>
-                <div class="hero-visual" aria-hidden="true"><div class="orbita orbita-uno"></div><div class="orbita orbita-dos"></div><img src="logo-jhakorn.svg" alt="" width="512" height="512"><span class="nodo nodo-uno">PC</span><span class="nodo nodo-dos">IoT</span><span class="nodo nodo-tres">NET</span></div>
-            </div>
+        <section class="hero hero-v2">
+           <div class="contenedor hero-rejilla">
+             <div class="hero-contenido">
+               <p class="etiqueta">JHAKORN Tech · Centro de Control</p>
+               <h1>Automatización técnica <span>para el mundo real.</span></h1>
+               <p class="hero-texto">Herramientas, soporte técnico y desarrollo de soluciones para simplificar instalaciones, configuraciones y despliegues.</p>
+               <div class="consola consola-home" id="comando"><div class="consola-barra"><span>WPI JHAKORN · Windows PowerShell</span><button type="button" data-copy="irm https://jhakorn.com/wpi | iex">Copiar</button></div><code>irm https://jhakorn.com/wpi | iex</code></div>
+               <div class="acciones"><a class="boton boton-principal" href="/tech/">Explorar Centro de Control →</a><a class="boton boton-secundario" href="/documentacion/">Documentación técnica</a></div>
+               <p class="hero-cuidado">El comando descarga y ejecuta un script. Revisa los requisitos y su procedencia antes de utilizarlo.</p>
+             </div>
+             <div class="producto-marco">
+                <div class="producto-superior"><span>⬡ &nbsp; WPI JHAKORN</span><span>v2.2.1 · Vista de referencia</span></div>
+                <div class="producto-pestanas"><span>SCRIPTS</span><strong>PROGRAMAS</strong><span>RESULTADOS</span></div>
+                <div class="producto-cuerpo"><div class="producto-menu"><small>PERFIL DE PROGRAMAS</small><b>GAMC ▾</b><small>CATEGORÍAS</small><span class="activo">Todos</span><span>Utilidades</span><span>Navegadores</span><span>Oficina</span><span>Multimedia</span><span>Soporte remoto</span></div><div class="producto-lista"><div class="producto-search">Buscar programas...</div><h3>Todos los programas</h3><div class="producto-cards"><span>7-Zip</span><span>Mozilla Firefox</span><span>LibreOffice</span><span>VLC media player</span><span>UltraVNC</span><span>AnyDesk</span></div></div></div>
+                <div class="producto-foot">Vista ilustrativa basada en WPI · Se reemplazará por una captura real completa.</div>
+             </div>
+           </div>
+           <div class="contenedor hero-servicios">
+             <a href="/servicios/#empaquetados"><strong>▣ Empaquetados personalizados</strong><span>Instaladores adaptados a cada necesidad.</span><b>↗</b></a>
+             <a href="/servicios/#scripts"><strong>⌘ Scripts personalizados</strong><span>Automatizaciones PowerShell a medida.</span><b>↗</b></a>
+             <a href="/servicios/"><strong>◇ Soporte técnico</strong><span>Diagnóstico, redes, impresoras y sistemas.</span><b>↗</b></a>
+           </div>
         </section>
         <section class="seccion" id="servicios"><div class="contenedor">
             <div class="titulo-seccion"><div><p class="etiqueta">Servicios</p><h2>Soluciones técnicas integrales</h2></div><p>Evaluamos cada caso y explicamos la solución antes de realizar el trabajo.</p></div>
@@ -46,7 +69,7 @@
         <section class="seccion seccion-oscura" id="proceso"><div class="contenedor"><p class="etiqueta">Proceso de trabajo</p><h2>Sin sorpresas y con autorización</h2><ol class="pasos"><li><span>01</span><div><h3>Consulta</h3><p>Describe el equipo y el problema observado.</p></div></li><li><span>02</span><div><h3>Diagnóstico</h3><p>Identificamos la causa y las alternativas disponibles.</p></div></li><li><span>03</span><div><h3>Autorización</h3><p>Explicamos el trabajo antes de realizarlo.</p></div></li><li><span>04</span><div><h3>Solución</h3><p>Ejecutamos, verificamos y entregamos recomendaciones.</p></div></li></ol></div></section>
         <section class="seccion" id="perfil"><div class="contenedor perfil-rejilla"><div class="perfil-marca"><img src="logo-jhakorn.svg" alt="Logo de Jhakorn" width="260" height="260"></div><div><p class="etiqueta">Perfil técnico</p><h2>Ingeniería aplicada a problemas reales</h2><p>Jhakorn combina formación en ingeniería electrónica con experiencia en soporte de computadoras e impresoras. El objetivo es diagnosticar con criterio técnico, comunicar con claridad y proponer soluciones prácticas.</p><ul class="lista-verificacion"><li>Diagnóstico antes de reemplazar componentes</li><li>Automatización mediante scripts controlados</li><li>Explicación comprensible para cada cliente</li><li>Atención presencial, remota y a domicilio</li></ul></div></div></section>
         <section class="seccion contacto" id="contacto"><div class="contenedor contacto-rejilla">
-            <div><p class="etiqueta">Contacto</p><h2>Conversemos sobre tu equipo</h2><p>Completa el formulario y prepararemos un mensaje para WhatsApp.</p><address class="datos-contacto"><a href="tel:+59177908460">+591 77908460</a><a href="mailto:ejemplo@gmail.com">ejemplo@gmail.com</a><span>Cochabamba, Bolivia</span><span>Atención de 17:00 a 22:00</span></address></div>
+            <div><p class="etiqueta">Contacto</p><h2>Conversemos sobre tu equipo</h2><p>Completa el formulario y prepararemos un mensaje para WhatsApp.</p><address class="datos-contacto"><a href="tel:+59177908460">+591 77908460</a><a href="/contacto/">Canales profesionales de contacto</a><span>Cochabamba, Bolivia</span><span>Atención de 17:00 a 22:00</span></address></div>
             <form id="formulario-contacto" class="formulario" novalidate><div class="campo"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="name"><p id="error-nombre" class="error"></p></div><div class="campo"><label for="servicio">Servicio</label><select id="servicio" name="servicio"><option value="">Selecciona una opción</option><option>Computadoras</option><option>Impresoras</option><option>Electrónica</option><option>Redes</option><option>Automatización</option><option>Soporte remoto</option></select><p id="error-servicio" class="error"></p></div><div class="campo"><label for="mensaje">Describe el problema</label><textarea id="mensaje" name="mensaje" rows="5"></textarea><p id="error-mensaje" class="error"></p></div><button class="boton boton-principal" type="submit">Preparar mensaje de WhatsApp</button><p id="resultado-formulario" class="resultado" aria-live="polite"></p></form>
         </div></section>
     </main>
