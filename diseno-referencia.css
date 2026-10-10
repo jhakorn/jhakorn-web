@@ -124,3 +124,58 @@
 /* Los controles deben permanecer accesibles y sin focos amarillos en navegación normal. */
 .web-v2 .sidebar-toggle:focus-visible,.web-v2 button:focus-visible,.web-v2 a:focus-visible{outline:2px solid #67e8f9;outline-offset:3px}
 .web-v2 .sidebar-toggle:focus:not(:focus-visible){outline:none}
+
+/* JHAKORN v2 — tercera iteración: densidad visual, coherencia de páginas. */
+.web-v2 .v2-hero{width:min(95%,1400px);grid-template-columns:minmax(0,44fr) minmax(0,56fr);gap:2.3%;min-height:0}
+.web-v2 .v2-stage{padding:19px 0 23px}
+.web-v2 .v2-story h1{font-size:clamp(2.3rem,3.55vw,3.65rem);line-height:1.04;margin:9px 0 12px}
+.web-v2 .v2-story h1 em{font-size:1.08em}
+.web-v2 .v2-story h2{font-size:clamp(1.2rem,1.7vw,1.55rem);line-height:1.28;margin-bottom:11px}
+.web-v2 .v2-description{font-size:clamp(.89rem,.94vw,.98rem);line-height:1.46;margin-bottom:14px;max-width:520px}
+.web-v2 .v2-eyebrow{font-size:.76rem}
+.web-v2 .v2-window{height:clamp(380px,36vw,510px);transform:perspective(1600px) rotateY(-5deg) rotateZ(-1.7deg) scale(.985);transform-origin:center;box-shadow:0 0 0 2px #0b87c0,0 0 29px #05acfb83,19px 19px 45px #0009}
+.web-v2 .v2-appcard{min-height:71px;padding:6px}
+.web-v2 .v2-appinfo p{margin:6px 0 3px}
+.web-v2 .v2-appicon{height:30px;flex-basis:29px}
+.web-v2 .v2-side{gap:4px;padding:9px}
+.web-v2 .v2-side>small{margin-top:4px}
+.web-v2 .v2-winbar{height:27px}
+.web-v2 .v2-winhead{height:51px}
+.web-v2 .v2-tabs{height:34px}
+.web-v2 .v2-apps{padding:9px}
+.web-v2 .v2-search{padding:7px;margin-bottom:10px}
+.web-v2 .v2-app-title{margin-bottom:7px}
+.web-v2 .v2-winbottom{height:46px}
+.web-v2 .v2-featurecards{margin-top:17px}
+.web-v2 .v2-featurecards a{min-height:130px;padding:14px 17px}
+.web-v2 .v2-featurecards small{font-size:.81rem;line-height:1.4}
+.web-v2 .v2-featurecards .v2-hex{flex-basis:58px;width:58px;height:58px}
+.web-v2 .v2-command{padding:8px 12px}
+.web-v2 .v2-actions{margin:12px 0}
+.web-v2 .v2-actions a{min-height:45px}
+.web-v2 .v2-benefits{font-size:.8rem}
+@media (min-width:1121px) and (max-height:900px){.web-v2 .v2-window{height:clamp(370px,34vw,470px)}.web-v2 .v2-story h1{font-size:clamp(2.3rem,3.35vw,3.35rem)}}
+@media (max-width:1120px){.web-v2 .v2-hero{grid-template-columns:1fr;max-width:790px}.web-v2 .v2-window{height:490px;transform:rotate(-1deg)}.web-v2 .v2-story{margin-bottom:15px}}
+@media (max-width:600px){.web-v2 .v2-window{height:400px;transform:none}.web-v2 .v2-appgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.web-v2 .v2-hero{width:94%}}
+/* Unificar toda la navegación multipágina al color y profundidad del inicio. */
+.pagina{background:#041124;color:#e8f3ff}
+.pagina .pagina-hero{background:radial-gradient(ellipse at 92% 8%,rgba(1,127,228,.29),transparent 45%),linear-gradient(117deg,#031128,#082c53 78%,#063c5a);position:relative;overflow:hidden;padding:34px 0 38px;border-bottom:1px solid #16628b}
+.pagina .pagina-hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.30;background:repeating-linear-gradient(135deg,transparent 0 105px,#1c8de124 106px 107px,transparent 108px 210px)}
+.pagina .pagina-hero .contenedor{position:relative;z-index:1;width:min(92%,1160px);display:grid;gap:6px;align-content:center}
+.pagina .pagina-hero .marca-hero{width:45px;height:45px;margin:0 0 4px}
+.pagina .pagina-hero h1{font-size:clamp(2rem,4vw,3.15rem);line-height:1.13;max-width:950px;margin:0}
+.pagina .pagina-hero .etiqueta{font-size:.75rem;margin:0;letter-spacing:.11em}
+.pagina .pagina-hero p:not(.etiqueta){font-size:clamp(.92rem,1.25vw,1rem);line-height:1.5;max-width:850px;margin:5px 0 0}
+.pagina .seccion{padding-block:clamp(1.8rem,3.5vw,3rem)}
+.pagina .seccion h2{font-size:clamp(1.7rem,3vw,2.5rem)}
+.pagina .enlaces-lista{margin-top:18px}
+.pagina .enlaces-lista article{background:linear-gradient(145deg,#0a213c,#0b3053);border-color:#205780;box-shadow:0 9px 29px #0005}
+.pagina .enlaces-lista article h3{color:#eff8ff}
+.pagina .enlaces-lista article p{color:#b9cfe9}
+.pagina .enlaces-lista article a{color:#67e8f9}
+.pagina .subtitulo{color:#b9cfe9}
+.pagina .nota{background:#102c49;color:#d5edfb;border-color:#06cae8}
+.pagina .fila-acciones .boton-secundario{color:#e9f8ff}
+.pagina .encabezado{background:#031126}
+.pagina .encabezado .barra{min-height:72px}
+@media(max-width:600px){.pagina .pagina-hero{padding:27px 0 29px}.pagina .pagina-hero .marca-hero{width:38px;height:38px}}
