@@ -69,3 +69,25 @@
 .sidebar-shade[hidden]{display:none}
 @media(min-width:960px){.web-v2 .hero-v2 .hero-rejilla{grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr)}}
 @media(max-width:560px){.producto-cuerpo{grid-template-columns:105px minmax(0,1fr)}.producto-menu{font-size:.65rem}.producto-cards{grid-template-columns:1fr}.producto-superior{font-size:.72rem}.sidebar-toggle span{display:none}.web-v2 .hero-v2 h1{font-size:clamp(2.2rem,10vw,3.5rem)}}
+
+/* Entrega 03: menú hamburguesa integrado en la marca y proporciones del hero */
+.web-v2 .encabezado .barra{justify-content:initial;gap:.85rem;flex-wrap:wrap}
+.web-v2 .encabezado .marca{margin-right:auto;letter-spacing:.1em}
+.web-v2 .encabezado .sidebar-toggle{position:static;z-index:auto;flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;background:transparent;border:1px solid rgb(103 232 249 / 45%);border-radius:.55rem;box-shadow:none;color:#67e8f9}
+.web-v2 .encabezado .sidebar-toggle:hover{background:#123b5d}
+.web-v2 .hamburger-lines{display:flex;flex-direction:column;gap:4px;align-items:center}
+.web-v2 .hamburger-lines i{display:block;width:20px;height:2px;background:currentColor;border-radius:2px}
+.web-v2 .encabezado .navegacion{margin-left:auto}
+.web-v2 .encabezado .controles{order:3}
+.web-v2 .hero-v2 .hero-rejilla{align-items:center}
+.web-v2 .hero-v2 h1{font-size:clamp(2.9rem,4.1vw,4.75rem);line-height:1.07;max-width:650px;letter-spacing:-.045em}
+.web-v2 .hero-v2 .hero-lead{font-size:clamp(1.32rem,2.15vw,2.15rem);font-weight:700;line-height:1.25;color:#c3daff;max-width:630px;margin:1.45rem 0 1rem}
+.web-v2 .hero-v2 .hero-texto{font-size:clamp(1rem,1.15vw,1.18rem);line-height:1.7}
+.web-v2 .hero-v2 .producto-marco{border-color:#35b5df;box-shadow:0 0 0 1px #123b5d,0 0 42px rgb(0 184 255 / 20%);transform:none}
+.web-v2 .producto-cards span{background:linear-gradient(125deg,#112b48,#102037)}
+.web-v2 .hero-v2 .hero-rejilla{padding-block:clamp(3rem,5vw,5rem)}
+.web-v2 .sidebar-jhakorn{top:76px}
+.web-v2 .sidebar-shade{inset:76px 0 0}
+@media(min-width:760px){.web-v2 .encabezado .barra{flex-wrap:nowrap}.web-v2 .encabezado .marca{margin-right:0}.web-v2 .encabezado .navegacion{margin-left:auto}}
+@media(max-width:759px){.web-v2 .encabezado .marca{margin-right:auto}.web-v2 .encabezado .controles{order:initial}.web-v2 .encabezado .navegacion{margin-left:0}.web-v2 .hero-v2 h1{font-size:clamp(2.5rem,9vw,4rem)}}
+@media(prefers-reduced-motion:reduce){.sidebar-jhakorn{transition:none}}
