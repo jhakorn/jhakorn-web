@@ -380,3 +380,17 @@
 .pagina .pagina-hero .marca-hero{filter:drop-shadow(0 0 12px rgba(0,193,255,.34))}
 .pagina .pagina-hero{padding:30px 0 33px}
 @media(max-width:680px){.pagina .pagina-hero{padding:23px 0 26px}.pagina .pagina-hero .contenedor{width:92%}}
+
+
+/* Entrega 09: una misma barra superior para Inicio y todas las páginas internas. */
+.web-v2 .encabezado{background:#031126!important;border-bottom:1px solid #133c62!important}
+.web-v2 .encabezado .barra{width:min(94%,1390px)!important;max-width:1390px!important;min-height:73px!important;display:flex;align-items:center;gap:.85rem}
+.web-v2 .encabezado .marca{flex-shrink:0;margin-right:0!important;font-size:1.48rem;letter-spacing:.095em}
+.web-v2 .encabezado .marca img{width:52px;height:52px}
+.web-v2 .encabezado .navegacion{margin-left:auto!important}
+.web-v2 .encabezado .controles{order:3}
+.web-v2 .encabezado .sidebar-toggle{position:static;flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:34px;height:42px;padding:0;border:0;background:transparent;box-shadow:none;color:#42cffa}
+.web-v2 .encabezado .sidebar-toggle:focus-visible{outline:2px solid #67e8f9;outline-offset:3px}
+.web-v2 .encabezado .menu a[aria-current="page"],.web-v2 .encabezado .menu a[href="#inicio"]{color:#12e1f5;border-bottom:2px solid #12e1f5;border-radius:0}
+.web-v2 .encabezado .boton-icono{border-color:#169fc4}
+@media(max-width:759px){.web-v2 .encabezado .barra{flex-wrap:wrap}.web-v2 .encabezado .marca{margin-right:auto!important}.web-v2 .encabezado .controles{order:initial}.web-v2 .encabezado .navegacion{margin-left:0!important}}
