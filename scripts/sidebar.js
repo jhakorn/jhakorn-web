@@ -2,8 +2,8 @@
 (()=>{'use strict';
 const side=document.querySelector('#sidebar-jhakorn'),toggle=document.querySelector('#sidebar-toggle'),close=document.querySelector('#sidebar-close'),shade=document.querySelector('#sidebar-shade');
 if(!side||!toggle||!shade)return;
-let previous=null;
-function setOpen(open){side.classList.toggle('abierta',open);toggle.setAttribute('aria-expanded',String(open));shade.hidden=!open;if(open){previous=document.activeElement;close?.focus()}else{if(side.contains(document.activeElement))toggle.focus();}}
+
+function setOpen(open){side.classList.toggle('abierta',open);toggle.setAttribute('aria-expanded',String(open));shade.hidden=!open;if(open){close?.focus()}else{if(side.contains(document.activeElement)||document.activeElement===close)toggle.focus();}}
 toggle.addEventListener('click',()=>setOpen(!side.classList.contains('abierta')));
 close?.addEventListener('click',()=>setOpen(false));
 shade.addEventListener('click',()=>setOpen(false));
