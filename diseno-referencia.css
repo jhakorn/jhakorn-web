@@ -79,3 +79,48 @@
 @media(max-width:1120px){.web-v2 .v2-hero{grid-template-columns:1fr;max-width:840px}.web-v2 .v2-window{height:590px}.web-v2 .v2-featurecards{grid-template-columns:1fr 1fr}.web-v2 .v2-story h1{font-size:clamp(3rem,6vw,4.3rem)}}
 @media(max-width:680px){.web-v2 .v2-stage{padding-top:25px}.web-v2 .v2-window{height:490px;font-size:9px;transform:none}.web-v2 .v2-appgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.web-v2 .v2-appcard{min-height:72px}.web-v2 .v2-appinfo p{display:none}.web-v2 .v2-side{padding:8px 5px;gap:4px}.web-v2 .v2-winbottom{font-size:.8em}.web-v2 .v2-featurecards{grid-template-columns:1fr}.web-v2 .v2-story h1{font-size:clamp(2.6rem,10vw,4rem)}.web-v2 .v2-actions a{width:100%;justify-content:center}.web-v2 .v2-hex{flex-basis:55px;width:55px;height:55px}.web-v2 .v2-featurecards a{min-height:145px}}
 @media(prefers-reduced-motion:reduce){.web-v2 .v2-featurecards a{transition:none}}
+
+/* Entrega 04 · calibración visual contra referencia 1448×1086. */
+/* El diseño original se dibujó con 1086px de altura; adaptar bloques a 840px sin romper el flujo. */
+.web-v2 .v2-stage{padding:29px 0 29px;background:
+ radial-gradient(ellipse at 79% 31%,rgba(8,106,183,.35),transparent 44%),
+ radial-gradient(ellipse at 97% 74%,rgba(0,55,120,.5),transparent 55%),
+ linear-gradient(120deg,#020e23 0%,#04152b 49%,#061d3c 100%)}
+.web-v2 .v2-stage::before{background:
+ linear-gradient(90deg,transparent 0 38%,rgba(0,129,235,.09) 45%,transparent 60%),
+ repeating-linear-gradient(90deg,transparent 0 90px,rgba(20,99,155,.08) 91px,transparent 92px 180px)}
+.web-v2 .v2-mesh{opacity:.74;background:
+ linear-gradient(30deg,transparent 35%,rgba(0,127,241,.24) 35.2%,transparent 35.6%),
+ linear-gradient(150deg,transparent 56%,rgba(0,127,241,.19) 56.3%,transparent 56.6%),
+ repeating-linear-gradient(120deg,transparent 0 86px,rgba(0,111,210,.085) 87px 88px,transparent 89px 174px)}
+.web-v2 .v2-hero{min-height:unset;gap:2.4%;align-items:center;grid-template-columns:minmax(0,.42fr) minmax(0,.58fr)}
+.web-v2 .v2-story h1{font-size:clamp(2.75rem,4.22vw,4.25rem);margin:12px 0 15px}
+.web-v2 .v2-story h2{font-size:clamp(1.35rem,2.1vw,2rem);margin-bottom:15px}
+.web-v2 .v2-description{font-size:clamp(.95rem,1.1vw,1.12rem);line-height:1.53;margin-bottom:19px}
+.web-v2 .v2-command{padding:11px 14px}
+.web-v2 .v2-actions{margin:18px 0 15px}
+.web-v2 .v2-actions a{min-height:52px}
+.web-v2 .v2-featurecards{margin-top:25px}
+.web-v2 .v2-featurecards a{min-height:163px}
+.web-v2 .v2-featurecards .v2-hex{border-radius:14px;box-shadow:0 0 0 5px #08213d,0 0 18px rgba(0,148,255,.48)}
+.web-v2 .v2-window{transform:rotate(-1deg);box-shadow:0 0 0 3px #04345e,0 0 24px rgba(0,183,255,.65),0 0 65px rgba(0,88,230,.35),0 24px 40px #0007}
+.web-v2 .v2-winhead{background:linear-gradient(100deg,#07172c,#0c1e38)}
+.web-v2 .v2-appcard{background:linear-gradient(140deg,#0f233e,#101b32)}
+/* Solo en escritorio de poca altura se compactan los espacios, manteniendo la vista completa al hacer scroll. */
+@media(min-width:1121px) and (max-height:900px){
+ .web-v2 .encabezado .barra{min-height:73px}
+ .web-v2 .v2-stage{padding-top:17px}
+ .web-v2 .v2-story h1{font-size:clamp(2.5rem,3.8vw,3.85rem);margin:9px 0 10px}
+ .web-v2 .v2-story h2{font-size:clamp(1.25rem,1.85vw,1.75rem);margin-bottom:11px}
+ .web-v2 .v2-description{font-size:clamp(.93rem,1.02vw,1.05rem);line-height:1.45;margin-bottom:14px}
+ .web-v2 .v2-command{padding:9px 12px}
+ .web-v2 .v2-actions{margin:14px 0 10px}
+ .web-v2 .v2-actions a{min-height:47px}
+ .web-v2 .v2-benefits{font-size:.82rem}
+ .web-v2 .v2-window{height:min(575px,calc(100vh - 205px))}
+ .web-v2 .v2-featurecards{margin-top:19px}
+ .web-v2 .v2-featurecards a{min-height:150px;padding:16px}
+}
+/* Los controles deben permanecer accesibles y sin focos amarillos en navegación normal. */
+.web-v2 .sidebar-toggle:focus-visible,.web-v2 button:focus-visible,.web-v2 a:focus-visible{outline:2px solid #67e8f9;outline-offset:3px}
+.web-v2 .sidebar-toggle:focus:not(:focus-visible){outline:none}
