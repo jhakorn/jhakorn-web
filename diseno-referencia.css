@@ -338,3 +338,16 @@
  repeating-linear-gradient(135deg,transparent 0 126px,rgba(3,111,205,.09) 127px,transparent 129px 254px),
  repeating-linear-gradient(45deg,transparent 0 150px,rgba(5,90,179,.07) 151px,transparent 153px 300px)!important}
 @media(max-width:680px){.web-v2 .v2-window-position::after{display:none!important}}
+
+
+/* JHAKORN Web v2 — alineación horizontal de portada con páginas internas.
+   El fondo continúa hasta ambos bordes; solo el contenido adopta el ancho compartido. */
+.web-v2 .v2-hero,.web-v2 .v2-featurecards{width:min(92%,1160px)!important;max-width:1160px!important;margin-left:auto!important;margin-right:auto!important}
+.web-v2 .v2-hero{grid-template-columns:minmax(0,44fr) minmax(0,56fr);gap:2.6%}
+.web-v2 .v2-featurecards{gap:14px}
+.web-v2 .v2-window{height:clamp(360px,35vw,485px)}
+.web-v2 .v2-featurecards a{padding:14px;gap:13px}
+.web-v2 .v2-featurecards strong{font-size:1rem}
+.web-v2 .v2-featurecards small{font-size:.79rem}
+@media(max-width:1120px){.web-v2 .v2-hero{grid-template-columns:1fr;max-width:790px!important}.web-v2 .v2-window{height:470px}.web-v2 .v2-featurecards{max-width:790px!important}}
+@media(max-width:680px){.web-v2 .v2-hero,.web-v2 .v2-featurecards{width:92%!important}.web-v2 .v2-window{height:400px}}
