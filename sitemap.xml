@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://jhakorn.com/</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
+  <url><loc>https://jhakorn.com/</loc></url>
+  <url><loc>https://jhakorn.com/tech/</loc></url>
+  <url><loc>https://jhakorn.com/servicios/</loc></url>
+  <url><loc>https://jhakorn.com/proyectos/</loc></url>
+  <url><loc>https://jhakorn.com/documentacion/</loc></url>
+  <url><loc>https://jhakorn.com/contacto/</loc></url>
 </urlset>
